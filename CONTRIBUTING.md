@@ -2,7 +2,7 @@
 
 First off, thanks for taking the time to contribute!
 
-The following is a set of guidelines for contributing to PowSyBl, which are hosted in the [PowSyBl Organization](https://github.com/powsybl) on GitHub. These are mostly guidelines, not rules. Use your best judgment, and feel free to propose changes to this document in a pull request.
+The following is a set of guidelines for contributing to the CoMPAS project. These are mostly guidelines, sometimes rules. Use your best judgment, and feel free to propose changes to this document in a pull request.
 
 #### Table Of Contents
 
