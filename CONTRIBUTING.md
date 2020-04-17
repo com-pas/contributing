@@ -33,7 +33,7 @@ This project and everyone participating in it is governed by the project's [Code
 
 By contributing to the CoMPAS project, you accept and agree to the following terms and conditions for your present and future contributions submitted to CoMPAS.
 
-All contributions to this project are licensed under the license stipulated at the corresponding repository. Except where otherwise explicitely stipulated, CoMPAS is an open source project licensed under the [Apache License, version 2.0](http://www.apache.org/licenses/LICENSE-2.0/). 
+All contributions to this project are licensed under the license stipulated at the corresponding sub-repository. Except where otherwise explicitely indicated, CoMPAS is an open source project licensed under the [Apache License, version 2.0](http://www.apache.org/licenses/LICENSE-2.0/). 
 
 The project requires the use of the [Developer Certificate of Origin (DCO)](https://developercertificate.org/). The DCO is a legally binding statement that asserts that you are you have the right to submit your contribution and to license it under the project's applicable license.
 
@@ -44,7 +44,7 @@ Here is an example Signed-off-by line, that indicates the submitter accepts the 
 ````
 This is my commit message.
 
-Signed-off-by: Name Surname <namea.surname@entity.com>
+Signed-off-by: Name Surname <name.surname@entity.com>
 ````
 You can write it manually but Git even has a -s command line option to append this automatically to your commit message:
 ````
