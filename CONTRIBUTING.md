@@ -1,4 +1,4 @@
-# Contributing to PowSyBl
+# Contributing to CoMPAS
 
 First off, thanks for taking the time to contribute!
 
@@ -181,7 +181,7 @@ Committers are contributors who have made several valuable contributions to the 
 The Technical Steering Committee (TSC) is composed of voting members elected by the active Committers as described in the project’s Technical Charter. The TSC is responsible for the technical direction of the project.
 
 #### Members
-PowSyBl TSC voting members are:
+CoMPAS TSC voting members are:
 - Frédéric Fousseret (https://github.com/?)
 - Mohamed Sylla (https://github.com/?)
 - Stevan Vigouroux (https://github.com/?)
