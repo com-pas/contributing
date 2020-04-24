@@ -185,7 +185,6 @@ CoMPAS TSC voting members are:
 - Frédéric Fousseret (https://github.com/?)
 - Mohamed Sylla (https://github.com/?)
 - Stevan Vigouroux (https://github.com/?)
-- TBC (https://github.com/?)
 
 #### Voting
 While the Project aims to operate as a consensus-based community, if any TSC decision requires a vote to move the Project forward, the voting members of the TSC will vote on a one vote per voting member basis. The simple majority is needed to approve proposals.
