@@ -7,9 +7,14 @@ The mission of the **CoMPAS** project is to **develop open source software compo
 
 The project seeks to: 
 - leverage multi-vendor and multi-end-user development resources and 61850 competences to accelerate the development of
-common software blocks
+common software blocks;
 - promote top-down configuration processes and common model implementation choices (thus also accelerate the conformity to
-IEC 61850 through software implementation)
+IEC 61850 through software implementation);
+- deliver a production grade and reference implementation of the standard.
+
+*The project strives not to duplicate works already carried out in standardization groups. When the rules and principles 
+from the standard are not comprehensive enough or subject to interpretation or still work in progress, the project may 
+have to take choices for the implementation. In such case it should strive to a configurable implementation.*
 
 
 ## Background
@@ -26,3 +31,8 @@ The design of the new DSAS will have to allow for a drastically higher level of 
 compared to the previous generations. An open source collaboration is essential to meet those requirements in a cost-efficient way 
 by sharing the effort through a leveraged development approach that involves all stakeholders from equipment manufacturers 
 to end-users, fostering vendor-agnostic implementations and convergence of utility practices.
+
+
+## Contributing
+
+Interested in contributing? Please read carefully the [CONTRIBUTING guidelines](/CONTRIBUTING.md).
