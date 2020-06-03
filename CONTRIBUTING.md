@@ -27,7 +27,7 @@ The following is a set of guidelines for contributing to the CoMPAS project. The
 
 ## Code of Conduct
 
-This project and everyone participating in it is governed by the project's [Code of Conduct](CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code. Please report unacceptable behavior to the project's Technical Steering Committee [compas-tsc@lists.lfenergy.org](mailto:compas-tsc@lists.lfenergy.org).
+This project and everyone participating in it is governed by the project's [Code of Conduct](CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code. Please report unacceptable behavior to the project's Technical Steering Committee [CoMPAS-tsc@lists.lfenergy.org](mailto:CoMPAS-tsc@lists.lfenergy.org).
 
 ## License and Developer Certificate of Origin
 
@@ -61,7 +61,7 @@ Bugs and enhancement suggestions are tracked as [GitHub issues](https://guides.g
 
 Before creating bug reports or suggesting enhancement, please **perform a [cursory search](https://github.com/search?q=+is%3Aissue+user%3Acom-pas)** to see if the problem has already been reported. If it has **and the issue is still open**, add a comment to the existing issue instead of opening a new one..
 
-You can also contact the team directly to talk about your ideas at [compas-dev@lists.lfenergy.org](mailto:compas-dev@lists.lfenergy.org) or chat on [Spectrum](https://spectrum.chat/compas).
+You can also contact the team directly to talk about your ideas at [CoMPAS-dev@lists.lfenergy.org](mailto:CoMPAS-dev@lists.lfenergy.org).
 
 > **Note:** If you find a **Closed** issue that seems like it is the same thing that you're experiencing, open a new issue and include a link to the original issue in the body of your new one.
 
@@ -108,10 +108,10 @@ Using maven, you can selectively run some tests and compile only some projects a
 ```
 # Simple run of a single test class in one project. Use either a colon followed by the ArtifactId or the directory of the project.
 $ mvn test -Dtest=MyTestClass -DfailIfNoTests=false -pl :artifactid -am
-# Simple run of a all tests in the time-series project (use the correct package and artifactid)
-$ mvn test -Dtest=com.powsybl.timeseries.** -DfailIfNoTests=false -pl :artifactid -am
+# Simple run of a all tests in one project (use the correct package and artifactid)
+$ mvn test -Dtest=MyProjectPackage.** -DfailIfNoTests=false -pl :artifactid -am
 # Complex selection of tests
-$ mvn test -Dtest=Project1Class#method1,Project1Class#method3,com.powsybl.package2.** -DfailIfNoTests=false -pl :artifact1,directory2 -am
+$ mvn test -Dtest=MyProject1Class#method1,MyProject1Class#method3,MyProjectPackage2.** -DfailIfNoTests=false -pl :artifact1,directory2 -am
 # Sometimes problems are masked by maven trimming stacktraces:
 $ mvn test -DtrimStackTrace=false
 # Running tests and compiles in parallel can speed things up:
@@ -130,7 +130,7 @@ Eclipse IDE has two ways to import maven projects: the eclipse GUI component m2e
 Using maven-eclipse-plugin, it is possible to recreate all the necessary eclipse files from scratch. A practical way to use it and get deterministic results is to remove all existing eclipse files, delete all eclipse projects from the workspace, regenerate all the eclipse files and reimport everything into eclipse as "existing eclipse projects". If all your projects are checked out outside of the eclipse workspace on the file system, then deleting all the projects is even simpler because you can just delete the whole workspace. The whole cycle takes only a few seconds.
 ```
 # Ensure that eclipse is not running
-# delete the projects in the GUI, or "rm -rf" the eclipse workspace if you only have the powsybl projects
+# delete the projects in the GUI, or "rm -rf" all eclipse projects from the workspace
 # delete all eclipse files from the file system
 $ find . -name .project -o .classpath -o -name .settings -exec rm -rf '{}' \;
 # regenerate eclipse files
@@ -182,20 +182,20 @@ The Technical Steering Committee (TSC) is composed of voting members elected by 
 
 #### Members
 CoMPAS TSC voting members are:
-- Frédéric Fousseret (https://github.com/?)
-- Mohamed Sylla (https://github.com/?)
-- Stevan Vigouroux (https://github.com/?)
+- Frédéric Fousseret (https://github.com/FredFousPro)
+- Mohamed Sylla (https://github.com/syllamoh)
+- Stevan Vigouroux (https://github.com/SteVigGE)
 
 #### Voting
 While the Project aims to operate as a consensus-based community, if any TSC decision requires a vote to move the Project forward, the voting members of the TSC will vote on a one vote per voting member basis. The simple majority is needed to approve proposals.
-The preferred way to vote is to create a poll [here](https://lists.lfenergy.org/g/compas-tsc/addpoll).
+The preferred way to vote is to create a poll [here](https://lists.lfenergy.org/g/CoMPAS-tsc/addpoll).
 
 #### Responsibilities
 The project is split into several repositories. There is at least one Committer in charge of each repository. By "in charge", we mean:
 -	best effort to review the pull request,
 -	best effort to resolve issues,
 -	building and publishing the releases, including writing the release notes and informing the community,
--	in case of unability to perform the above tasks, the Committer in charge has to ask the TSC through the list [compas-tsc@lists.lfenergy.org](mailto:compas-tsc@lists.lfenergy.org) to find another Committer to review the pull request, resolve the issue or build and publish the release.  
+-	in case of unability to perform the above tasks, the Committer in charge has to ask the TSC through the list [CoMPAS-tsc@lists.lfenergy.org](mailto:CoMPAS-tsc@lists.lfenergy.org) to find another Committer to review the pull request, resolve the issue or build and publish the release.  
 
 Please refer to our [maintainers file](MAINTAINERS.md) for more details about our work division.
 
