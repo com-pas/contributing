@@ -10,7 +10,7 @@ The project seeks to:
 common software blocks;
 - promote top-down configuration processes and common model implementation choices (thus also accelerate the conformity to
 IEC 61850 through software implementation);
-- deliver a production grade and reference implementation of the standard.
+- deliver and maintain a production grade and reference implementation of the standard.
 
 *The project strives not to duplicate works already carried out in standardization groups. When the rules and principles 
 from the standard are not comprehensive enough or subject to interpretation or still work in progress, the project may 
