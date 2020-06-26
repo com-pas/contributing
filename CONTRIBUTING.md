@@ -27,7 +27,7 @@ The following is a set of guidelines for contributing to the CoMPAS project. The
 
 ## Code of Conduct
 
-This project and everyone participating in it is governed by the project's [Code of Conduct](CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code. Please report unacceptable behavior to the project's Technical Steering Committee [CoMPAS-tsc@lists.lfenergy.org](mailto:CoMPAS-tsc@lists.lfenergy.org).
+This project applies the [LF Energy Code of Conduct](https://www.lfenergy.org/about/code-of-conduct/). By participating, you are expected to uphold this code. Please report unacceptable behavior to the project's Technical Steering Committee [CoMPAS-tsc@lists.lfenergy.org](mailto:CoMPAS-tsc@lists.lfenergy.org).
 
 ## License and Developer Certificate of Origin
 
