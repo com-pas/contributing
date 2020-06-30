@@ -182,6 +182,7 @@ The Technical Steering Committee (TSC) is composed of voting members elected by 
 
 #### Members
 CoMPAS TSC voting members are:
+- Norbert Armand (https://github.com/Norbert-armand)
 - Frédéric Fousseret (https://github.com/FredFousPro)
 - Mohamed Sylla (https://github.com/syllamoh)
 - Stevan Vigouroux (https://github.com/SteVigGE)
