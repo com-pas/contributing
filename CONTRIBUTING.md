@@ -21,6 +21,7 @@ The following is a set of guidelines for contributing to the CoMPAS project. The
 
 [Project Governance](#project-governance)
   * [Project Owner](#project-owner)
+  * [Technical Charter](#technical-charter)
   * [Committers](#committers)
   * [Technical Steering Committee](#technical-steering-committee)
   * [Contributors](#contributors)
@@ -171,6 +172,10 @@ A list of spelling differences between British and American English is available
 #### Project Owner
 
 CoMPAS is part of the [LF Energy Foundation](https://www.lfenergy.org/), a project of The Linux Foundation that supports open source innovation projects within the energy and electricity sectors.
+
+#### Technical Charter
+
+The Project's [Technical Charter](CoMPAS%20Technical%20Charter%207-6-2020.pdf) sets forth the responsibilities and procedures for technical contribution to, and oversight of, the COMPAS Project.
 
 #### Committers
 
