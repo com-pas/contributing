@@ -14,6 +14,7 @@ The following is a set of guidelines for contributing to the CoMPAS project. The
   * [Reporting Bugs and Suggesting Enhancements](#reporting-bugs-and-suggesting-enhancements)
   * [Contributing Code](#contributing-code)
   * [Tools to contribute](#tools-to-contribute)
+  * [Definition of Done](#definition-of-done)
 
 [Styleguides](#styleguides)
   * [Git Commit Messages](#git-commit-messages)
@@ -93,6 +94,23 @@ Continuous integration is setup to run on all branches automatically and will of
 ### Tools to contribute
 
 Continuous integration is setup automatically on all contributions. However, it's faster to iterate locally to fix problems than waiting for the status checks to finish. There are many tools that can be used to do the verifications that are enforced by all status checks. The most simple and universal tool is maven, but IDE integrations can be used to get more immediate feedback. Most of the team uses IntelliJ IDEA, but others IDEs can be used, for exemple the Eclipse IDE.
+
+### Definition of Done
+
+Before finishing a requirement, you need to check if everything is done for that particular requirement.
+For that, we have a Definition of Done; the DoD decides when a requirement is really done.
+
+Note: A Defintion of Done is not a static list. It can be modified any time, if people feel like corrections should be made.
+
+Current Definition of Done (edit: 28-08-2020):
+- Assumptions of requirements are met.
+- Required documentation is done.
+- Requirement got a thumbs up from the Product Owner.
+- (Software) The build succeeds without failures.
+- (Software) All tests in the test suite pass.
+- (Software) Checkstyle and SonarCloud report no violations.
+- (Software) Code coverage is high enough (currently about 80%).
+- (Software) If applicable, the added Unit Test is written, executed and passed.
 
 #### Basic Maven Usage
 The project uses maven to manage the build. The configuration of all the tools is fairly standard, so if you have already contributed to Java projects, you should feel right at home. You can safely run the full test suite, checkstyle, see code coverage information and the generated documentation with the following command:
