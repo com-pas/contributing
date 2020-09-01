@@ -102,15 +102,16 @@ For that, we have a Definition of Done; the DoD decides when a requirement is re
 
 Note: A Defintion of Done is not a static list. It can be modified any time, if people feel like corrections should be made.
 
-Current Definition of Done (edit: 28-08-2020):
+Current Definition of Done:
 - Assumptions of requirements are met.
 - Required documentation is done.
-- Requirement got a thumbs up from the Product Owner.
+- (Software) Requirement is accepted and got a thumbs up from the Maintainer via an accepted Pull Request.
 - (Software) The build succeeds without failures.
 - (Software) All tests in the test suite pass.
-- (Software) Checkstyle and SonarCloud report no violations.
-- (Software) Code coverage is high enough (currently about 80%).
+- (Software) Code style checks report no violations.
+- (Software) Code coverage is high enough (a minimum of 80% is coveraged).
 - (Software) If applicable, the added Unit Test is written, executed and passed.
+- (Software) Security analysis (vulnerability detection) doesn't spot unaddressed issues.
 
 #### Basic Maven Usage
 The project uses maven to manage the build. The configuration of all the tools is fairly standard, so if you have already contributed to Java projects, you should feel right at home. You can safely run the full test suite, checkstyle, see code coverage information and the generated documentation with the following command:
