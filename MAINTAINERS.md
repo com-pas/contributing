@@ -19,4 +19,3 @@ Please find hereunder our work division:
 
 **compas-cim-mapping**
 - Review: [Flurb](https://github.com/Flurb) and [Sander3003](https://github.com/Sander3003)
-- Release: [Flurb](https://github.com/Flurb) and [Sander3003](https://github.com/Sander3003)
