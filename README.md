@@ -32,6 +32,9 @@ compared to the previous generations. An open source collaboration is essential 
 by sharing the effort through a leveraged development approach that involves all stakeholders from equipment manufacturers 
 to end-users, fostering vendor-agnostic implementations and convergence of utility practices.
 
+## Presentations
+
+CoMPAS presentations can be added to the presentations for re-use.
 
 ## Contributing
 
