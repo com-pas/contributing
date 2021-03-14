@@ -15,6 +15,7 @@ The following is a set of guidelines for contributing to the CoMPAS project. The
   * [Contributing Code](#contributing-code)
   * [Tools to contribute](#tools-to-contribute)
   * [Definition of Done](#definition-of-done)
+  * [How-to begin](#how-to-begin)
 
 [Styleguides](#styleguides)
   * [Git Commit Messages](#git-commit-messages)
@@ -112,6 +113,55 @@ Current Definition of Done:
 - (Software) Code coverage is high enough (a minimum of 80% is coveraged).
 - (Software) If applicable, the added Unit Test is written, executed and passed.
 - (Software) Security analysis (vulnerability detection) doesn't spot unaddressed issues.
+
+### How-to begin
+
+Before you start your coding journey within the CoMPAS project, there are some things we have to talk about.
+Some things that will make your start a little bit easier!
+
+#### Open Community Calls
+It's good to know that every other monday, we are having a so called Open Community Call. Everyone participating in the CoMPAS project can join and talk about and ask question about the CoMPAS project. 
+
+When the Open Community Calls are taking place, can be found at the [General CoMPAS mailing list calendar](https://lists.lfenergy.org/g/CoMPAS/calendar).
+
+The agendas can be found at the [LF Energy wiki](https://wiki.lfenergy.org/display/HOME/CoMPAS+Community+Calls).
+
+If you have something to add, please add it to the agenda and notify everyone on Slack!
+
+#### Slack channel
+One of the first important things, is to meet the community. Feel free to introduce yourself on our [Slack channel](https://app.slack.com/client/TLU68MTML/C01926K9D39)!
+
+The Slack channel is the first communication platform within the CoMPAS project (besides email and the Github platform), so if you need help for example you can use Slack!
+
+#### Github
+What's Github? It's where you're looking right now! (Joking!).
+
+We are using Github for hosting our Git repositories. Github is being used for creating issues and creating Pull Requests to review / merge each others code.
+
+#### Documenting
+A good (open source) project requires documentation.
+We have two places for our documentation
+
+##### LF Energy Wiki
+LF Energy has it's own [CoMPAS specific Wiki](https://wiki.lfenergy.org/display/HOME/CoMPAS). This is the place for documenation about CoMPAS in general (like roadmap and the community call agendas).
+
+##### CoMPAS Architecture Github Pages
+There is also a [Github Pages](https://com-pas.github.io/compas-architecture/) website for CoMPAS architecture specific topics.
+
+#### Copyright and Licensing
+Copyright and license information is done on per-file basis. We use the specification of [REUSE](https://reuse.software/spec/) to ensure that copyright information of the project is clear and can be analuzed in an automated fashion.
+
+Every source code repository within CoMPAS has a Github Action for checking against the REUSE specification.
+
+For more information, check 
+
+Something about build tools
+Something about IDEs
+Something about documenting
+Something about licences (LFX Security Tool)
+Something about LFX Security tool
+Something about Github Actions
+Something about used technologies / architecture
 
 #### Basic Maven Usage
 The project uses maven to manage the build. The configuration of all the tools is fairly standard, so if you have already contributed to Java projects, you should feel right at home. You can safely run the full test suite, checkstyle, see code coverage information and the generated documentation with the following command:
