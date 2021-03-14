@@ -153,15 +153,18 @@ Copyright and license information is done on per-file basis. We use the specific
 
 Every source code repository within CoMPAS has a Github Action for checking against the REUSE specification.
 
-For more information, check 
+For more information, check the [Copyright Guidelines](#copyright-guidelines) section.
 
-Something about build tools
-Something about IDEs
-Something about documenting
-Something about licences (LFX Security Tool)
-Something about LFX Security tool
-Something about Github Actions
-Something about used technologies / architecture
+#### LFX Security Tool
+For checking potential security issues, we use the [LFX Security Tool](https://security.lfx.linuxfoundation.org/#/e8b6fdf9-2686-44c5-bbaa-6965d04ad3e1/licenses). The LFX Security Tool scans selected repositories for potential security issues in dependencies. It also scans every license that is being used within a repository and checks if they are compatible within open source projects.
+
+#### SonarCloud
+CoMPAS is using [SonarCloud](https://sonarcloud.io/organizations/com-pas/projects) for static code analysis. Every Github repository has a Github Action which automatically pushes the code to SonarCloud with a frequency of the given Github Action (most of the time on each push).
+
+A Pull Request can't be merged before all SonarCloud issues are being fixed!
+
+#### Architecture and technologies
+For all architecture and technology choices (for example frameworks, build tools, database choices, etcetera), please check the source code (duh!) and our [CoMPAS Architecture Github Pages](https://com-pas.github.io/compas-architecture/).
 
 #### Basic Maven Usage
 The project uses maven to manage the build. The configuration of all the tools is fairly standard, so if you have already contributed to Java projects, you should feel right at home. You can safely run the full test suite, checkstyle, see code coverage information and the generated documentation with the following command:
