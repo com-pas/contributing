@@ -1,0 +1,26 @@
+# SPDX-FileCopyrightText: 2021 Alliander N.V.
+#
+# SPDX-License-Identifier: Apache-2.0
+
+# IDE specific
+.vscode/
+.idea
+
+# General
+.DS_Store
+target
+*.iml
+.settings
+.project
+.classpath
+out
+lib
+bin
+.java-version
+*.orig
+*.rej
+*.swp
+*.swo
+.cache
+build
+
