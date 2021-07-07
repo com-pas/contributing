@@ -233,31 +233,6 @@ by using `mvn -s custom_maven_settings.xml` and perhaps some extra parameters yo
 For the `servers` part, we again have the `github-packages-compas` ID that needs to be the same. We have an `OWNER` username (this is the default, because
 it needs to have a username) and a password which is the GITHUB_TOKEN that's always available.
 
-#### Basic Maven Usage
-The project uses maven to manage the build. The configuration of all the tools is fairly standard, so if you have already contributed to Java projects, you should feel right at home. You can safely run the full test suite, checkstyle, see code coverage information and the generated documentation with the following command:
-```
-$ mvn clean verify javadoc:aggregate -Pjacoco
-```
-You can then inspect global code coverage in `distribution-core/target/site/jacoco-aggregate/index.html` and the javadoc in `./target/site/apidocs/index.html`.
-
-To run a full sonarqube analysis, download and launch a sonarcube server on your machine and add the `sonar:sonar` goal at the end of the maven command line. However, it is not practical to run it every time. A more efficient alternative is to run sonarlint in an IDE.
-
-#### Advanced Maven Usage
-
-Using maven, you can selectively run some tests and compile only some projects and avoid long package generation tasks. Here are a few examples that are useful, feel free to compose them to find a workflow that suits you. Please consult Maven's documentation for more uses of maven.
-```
-# Simple run of a single test class in one project. Use either a colon followed by the ArtifactId or the directory of the project.
-$ mvn test -Dtest=MyTestClass -DfailIfNoTests=false -pl :artifactid -am
-# Simple run of a all tests in one project (use the correct package and artifactid)
-$ mvn test -Dtest=MyProjectPackage.** -DfailIfNoTests=false -pl :artifactid -am
-# Complex selection of tests
-$ mvn test -Dtest=MyProject1Class#method1,MyProject1Class#method3,MyProjectPackage2.** -DfailIfNoTests=false -pl :artifact1,directory2 -am
-# Sometimes problems are masked by maven trimming stacktraces:
-$ mvn test -DtrimStackTrace=false
-# Running tests and compiles in parallel can speed things up:
-$ mvn -T 2.0C test
-```
-
 #### IDEs
 If your IDE is supported by sonarlint (both IntelliJ IDEA and the Eclipse IDE are supported), it is recommended to install it. It provides immediate feedback on most sonar issues. Running tests individually is often possible in IDEs without invoking maven. Please consult the documentation of your IDE for setting up the project through maven integration.
 
