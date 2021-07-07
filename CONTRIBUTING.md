@@ -177,30 +177,61 @@ See below how to do both action for the specific tools.
 To use Github Packages a username and token is needed. The username is your Github username. The token can be genreate in Github by going to your settings, Developer settings, Personal access tokens.
 Generate a new token here and make sure that the scope "read:packages" is enabled. Use this token below to configure the build tools.
 
-#### Basic Gradle
-The project uses Gradle to manage the build. Most projects use multi-module structures to build all code. A basic command to run gradle is:
+#### Basic Maven
+The project uses Maven to manage the build. Most projects use multi-module structures to build all code. A basic command to run Maven is:
 ```
-$ gradle build
+$ maven clean verify
 ```
-#### Github Packages in Gradle
-To use Github Packages in Gradle an extra repository need to be added to the build process.
+#### Github Packages in Maven
+To use Github Packages in Maven an extra repository need to be added to the build process.
 ```
-repositories {
-    ...
-    maven {
-        name = "GitHubPackages"
-        url = uri("https://maven.pkg.github.com/com-pas/*")
-        credentials {
-            username = project.hasProperty('githubUsername') ? project.getProperty("githubUsername") : System.getenv("GITHUB_USERNAME")
-            password = project.hasProperty('githubToken') ? project.getProperty("githubToken") : System.getenv("GITHUB_TOKEN")
-        }
-    }
-    ...
-}
+<repositories>
+    <repository>
+        <id>github-packages-compas</id>
+        <name>Github Packages CoMPAS</name>
+        <url>https://maven.pkg.github.com/com-pas/*</url>
+    </repository>
+</repositories>
 ```
-Because credentials are needed for Github Packages these can be passed in 2 different ways. 
-- First solution is to added the properties "githubUsername" and "githubToken" to your gradle.properties in your home directory (~/.gradle/gradle.properties). This solution doesn't seem to work with Intellij IDEA. 
-- The second solution is to create two environment properties "GITHUB_USERNAME" and "GITHUB_TOKEN". This ones is also used by Github Actions.
+Because credentials are needed for Github Packages, these will be passed by using the Settings.xml file.
+
+##### Local Settings.xml
+Edit (or create if not already exists) the `~/.m2/settings.xml` file and add the following content:
+```xml
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" 
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
+                              http://maven.apache.org/xsd/settings-1.0.0.xsd">
+  
+    <servers>
+        <server>
+            <id>github-packages-compas</id>
+            <username>username</username>
+            <password>password</password>
+        </server>
+    </servers>
+  
+</settings>
+```
+Add this server section. The ID of the server must be the same as the ID found in the previous repository ID, it should map.
+Username should be your Github username, password can both be your own [encrypted password](https://maven.apache.org/guides/mini/guide-encryption.html)
+or a [Personal Access Token](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token). 
+
+##### Settings.xml during Github Action
+During multiple Github Actions (like building and SonarCloud analysis), the `settings.xml` file is also needed because it needs access to the Github Packages
+to download certain artifacts. We can do this by adding the following step **before** the Github Packages is needed:
+```yaml
+- name: Create custom Maven Settings.xml
+  uses: whelk-io/maven-settings-xml-action@v18
+  with:
+    output_file: custom_maven_settings.xml
+    servers: '[{ "id": "github-packages-compas", "username": "OWNER", "password": "${{ secrets.GITHUB_TOKEN }}" }]'
+```
+This basically creates a custom `settings.xml` at location `custom_maven_settings.xml`. This file can be passed to maven in the next step
+by using `mvn -s custom_maven_settings.xml` and perhaps some extra parameters you wish for.
+
+For the `servers` part, we again have the `github-packages-compas` ID that needs to be the same. We have an `OWNER` username (this is the default, because
+it needs to have a username) and a password which is the GITHUB_TOKEN that's always available.
 
 #### Basic Maven Usage
 The project uses maven to manage the build. The configuration of all the tools is fairly standard, so if you have already contributed to Java projects, you should feel right at home. You can safely run the full test suite, checkstyle, see code coverage information and the generated documentation with the following command:
