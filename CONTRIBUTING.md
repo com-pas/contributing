@@ -255,6 +255,20 @@ $ mvn package eclipse:eclipse
 
 After importing the projects with either method, install SonarLint for quicker feedback on potential sonar issues.
 
+#### Adding custom badges to your README
+Badges are great for quickly checking several status reports of a specific repository.
+Sometimes a application doesn't serve badges ([LFX Security tool](https://security.lfx.linuxfoundation.org/) for example), and you need to do it yourself.
+We use [shields.io](https://shields.io/) for this problem.
+
+In case of the LFX Security Tool, we used the following:
+- Go to [shields.io](https://shields.io/).
+- Go to the 'Dynamic' section.
+- Choose JSON as data type.
+- Insert 'LFX Security Tool' as the label.
+- Insert the API to use, in case of our LFX Security tool projects we use [this API](https://api.security.lfx.linuxfoundation.org/v1/project/e8b6fdf9-2686-44c5-bbaa-6965d04ad3e1/issues).
+- Now you can query using JsonPath. To get all open high issues from the 'CoMPAS Core' project, use `issues[?(@['repository-name'] == 'compas-core')]['high-open-issues']`.
+- Choose a color and a pre- or surfix text.
+
 ## Styleguides
 
 ### Git Commit Messages
