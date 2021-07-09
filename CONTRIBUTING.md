@@ -17,6 +17,7 @@ The following is a set of guidelines for contributing to the CoMPAS project. The
   * [Definition of Done](#definition-of-done)
   * [Copyright Guidelines](#definition-of-done)
   * [How-to begin](#how-to-begin)
+  * [Github Project Boards](#github-project-boards)
 
 [Styleguides](#styleguides)
   * [Git Commit Messages](#git-commit-messages)
@@ -268,6 +269,12 @@ In case of the LFX Security Tool, we used the following:
 - Insert the API to use, in case of our LFX Security tool projects we use [this API](https://api.security.lfx.linuxfoundation.org/v1/project/e8b6fdf9-2686-44c5-bbaa-6965d04ad3e1/issues).
 - Now you can query using JsonPath. To get all open high issues from the 'CoMPAS Core' project, use `issues[?(@['repository-name'] == 'compas-core')]['high-open-issues']`.
 - Choose a color and a pre- or surfix text.
+
+### Github Project Boards
+For managing the CoMPAS issues created in all the separate repositories, we use the [Projects Board](https://github.com/orgs/com-pas/projects) of Github.
+CoMPAS uses 2 different Project Boards: One for [Pull Requests](https://github.com/orgs/com-pas/projects/2) and one for the [Issues](https://github.com/orgs/com-pas/projects/1).
+
+Issues and Pull Requests can be moved on both the Project Boards and on the boards of the specific repository itself. It synchronizes automatically.
 
 ## Styleguides
 
