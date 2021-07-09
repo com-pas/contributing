@@ -274,6 +274,10 @@ In case of the LFX Security Tool, we used the following:
 For managing the CoMPAS issues created in all the separate repositories, we use the [Projects Board](https://github.com/orgs/com-pas/projects) of Github.
 CoMPAS uses 2 different Project Boards: One for [Pull Requests](https://github.com/orgs/com-pas/projects/2) and one for the [Issues](https://github.com/orgs/com-pas/projects/1).
 
+When creating Pull Requests or Issues, it will automatically create issues or Pull Requests on the Project Boards.
+This is done by the Automate Projects Github Action (take a look at the [action from the Data Service](https://github.com/com-pas/compas-scl-data-service/blob/develop/.github/workflows/automate_projects.yml) for example).
+Changing the status of Issues / Pull Requests is also handled automatically by the Github Action.
+
 Issues and Pull Requests can be moved on both the Project Boards and on the boards of the specific repository itself. It synchronizes automatically.
 
 ## Styleguides
