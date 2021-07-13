@@ -20,8 +20,6 @@ The following is a set of guidelines for contributing to the CoMPAS project. The
   * [Github Project Boards](#github-project-boards)
 
 [Styleguides](#styleguides)
-  * [Git Commit Messages](#git-commit-messages)
-  * [Java Styleguide](#java-styleguide)
   * [Copyright Guidelines](#copyright-guidelines)
 
 [Project Governance](#project-governance)
