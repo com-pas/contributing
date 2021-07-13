@@ -142,8 +142,9 @@ We have two places for our documentation
 ##### LF Energy Wiki
 LF Energy has it's own [CoMPAS specific Wiki](https://wiki.lfenergy.org/display/HOME/CoMPAS). This is the place for documenation about CoMPAS in general (like roadmap and the community call agendas).
 
-##### CoMPAS Architecture Github Pages
-There is also a [Github Pages](https://com-pas.github.io/compas-architecture/) website for CoMPAS architecture specific topics.
+#### Architecture and technologies
+For all architecture and technology choices (for example frameworks, build tools, database choices, etcetera),
+please check the source code (duh!) and our [CoMPAS Architecture Github Pages](https://com-pas.github.io/compas-architecture/).
 
 #### Copyright and Licensing
 Copyright and license information is done on per-file basis. We use the specification of [REUSE](https://reuse.software/spec/) 
@@ -153,23 +154,6 @@ Every source code repository within CoMPAS has a Github Action for checking agai
 
 For more information, check the [Copyright Guidelines](#copyright-guidelines) section.
 
-#### Architecture and technologies
-For all architecture and technology choices (for example frameworks, build tools, database choices, etcetera), 
-please check the source code (duh!) and our [CoMPAS Architecture Github Pages](https://com-pas.github.io/compas-architecture/).
-
-#### Adding custom badges to your README
-Badges are great for quickly checking several status reports of a specific repository.
-Sometimes a application doesn't serve badges ([LFX Security tool](https://security.lfx.linuxfoundation.org/) for example), and you need to do it yourself.
-We use [shields.io](https://shields.io/) for this problem.
-
-In case of the LFX Security Tool, we used the following:
-- Go to [shields.io](https://shields.io/).
-- Go to the 'Dynamic' section.
-- Choose JSON as data type.
-- Insert 'LFX Security Tool' as the label.
-- Insert the API to use, in case of our LFX Security tool projects we use [this API](https://api.security.lfx.linuxfoundation.org/v1/project/e8b6fdf9-2686-44c5-bbaa-6965d04ad3e1/issues).
-- Now you can query using JsonPath. To get all open high issues from the 'CoMPAS Core' project, use `issues[?(@['repository-name'] == 'compas-core')]['high-open-issues']`.
-- Choose a color and a pre- or surfix text.
 
 ### Github Project Boards
 For managing the CoMPAS issues created in all the separate repositories, we use the [Projects Board](https://github.com/orgs/com-pas/projects) of Github.

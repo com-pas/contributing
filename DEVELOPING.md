@@ -1,8 +1,16 @@
 # Developing for CoMPAS
 
+#### Table Of Contents
+
+* [Tooling](#tooling)
+* [Styleguides](#styleguides)
+* [IDEs](#ides)
+* [GitHub Actions](#github-actions)
+* [Others](#others)
+
 ## Tooling
 
-#### GitHub
+### GitHub
 What's GitHub? It's where you're looking right now! (Joking!).
 
 We are using GitHub for hosting our Git repositories. GitHub is being used for creating issues and creating Pull 
@@ -20,7 +28,7 @@ GitHub Action (most of the time on each push).
 
 A Pull Request can't be merged before all SonarCloud issues are being fixed!
 
-#### GitHub Packages
+### GitHub Packages
 To make artifacts available between the different GIT repositories we are using GitHub Packages to distribute these.
 Every GIT repository can build its artifacts and publish these to GitHub Packages.
 Other GIT repositories can then add GitHub Packages as Maven repository to their build tool.
@@ -30,13 +38,13 @@ To use GitHub Packages a username and token is needed. The username is your GitH
 in GitHub by going to your settings, Developer settings, Personal access tokens.
 Generate a new token here and make sure that the scope "read:packages" is enabled. Use this token below to configure the build tools.
 
-#### Basic Maven
+### Basic Maven
 The project uses Maven to manage the build. Most projects use multi-module structures to build all code. A basic command to run Maven is:
 ```
 $ maven clean verify
 ```
 
-#### GitHub Packages in Maven
+### GitHub Packages in Maven
 To use GitHub Packages in Maven an extra repository need to be added to the build process.
 ```xml
 <repositories>
@@ -49,7 +57,7 @@ To use GitHub Packages in Maven an extra repository need to be added to the buil
 ```
 Because credentials are needed for GitHub Packages, these will be passed by using the Settings.xml file.
 
-##### Maven Local Settings.xml for GitHub Packages
+### Maven Local Settings.xml for GitHub Packages
 Edit (or create if not already exists) the `~/.m2/settings.xml` file and add the following content:
 ```xml
 <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" 
@@ -116,7 +124,7 @@ After importing the projects with either method, install SonarLint for quicker f
 
 ## GitHub Actions
 
-##### Settings.xml during GitHub Action for GitHub Packages
+### Settings.xml during GitHub Action for GitHub Packages
 During multiple GitHub Actions (like building and SonarCloud analysis), the custom `settings.xml` file is needed because it needs access to the GitHub Packages
 to download certain artifacts. We can do this by adding the following step **before** the GitHub Packages repository is needed.
 
@@ -169,10 +177,26 @@ To publish artifacts to GiHub Packages a distribution section needs to be added 
     <repository>
         <id>github-packages-compas</id>
         <name>GitHub Packages</name>
-        <url>https://maven.pkg.github.com/com-pas/"repo-name"</url>
+        <url>https://maven.pkg.github.com/com-pas/[repo-name]</url>
     </repository>
 </distributionManagement>
 ```
 The ID is the same as the ID used for the repository section [above](#github-packages-in-maven).
 This way the same credentials will be used to connect to GitHub Packages as described [above](#maven-local-settingsxml-for-github-packages).
-Replace "repo-name" with the name of the repository from CoMPAS.
+Replace "[repo-name]" with the name of the repository from CoMPAS.
+
+## Others
+
+### Adding custom badges to your README
+Badges are great for quickly checking several status reports of a specific repository.
+Sometimes a application doesn't serve badges ([LFX Security tool](https://security.lfx.linuxfoundation.org/) for example), and you need to do it yourself.
+We use [shields.io](https://shields.io/) for this problem.
+
+In case of the LFX Security Tool, we used the following:
+- Go to [shields.io](https://shields.io/).
+- Go to the 'Dynamic' section.
+- Choose JSON as data type.
+- Insert 'LFX Security Tool' as the label.
+- Insert the API to use, in case of our LFX Security tool projects we use [this API](https://api.security.lfx.linuxfoundation.org/v1/project/e8b6fdf9-2686-44c5-bbaa-6965d04ad3e1/issues).
+- Now you can query using JsonPath. To get all open high issues from the 'CoMPAS Core' project, use `issues[?(@['repository-name'] == 'compas-core')]['high-open-issues']`.
+- Choose a color and a pre- or surfix text.
