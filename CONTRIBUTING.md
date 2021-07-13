@@ -131,7 +131,7 @@ The agendas can be found at the [LF Energy wiki](https://wiki.lfenergy.org/displ
 If you have something to add, please add it to the agenda and notify everyone on Slack!
 
 #### Slack channel
-One of the first important things, is to meet the community. Feel free to introduce yourself on our [Slack channel](https://app.slack.com/client/TLU68MTML/C01926K9D39)!
+One of the first important things, is to meet the community. Feel free to introduce yourself by joining the channel 'compas' on [LF Energy Slack](https://slack.lfenergy.org/)! 
 
 The Slack channel is the first communication platform within the CoMPAS project (besides email and the Github platform), so if you need help for example you can use Slack!
 
