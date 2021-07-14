@@ -20,8 +20,6 @@ The following is a set of guidelines for contributing to the CoMPAS project. The
   * [Github Project Boards](#github-project-boards)
 
 [Styleguides](#styleguides)
-  * [Git Commit Messages](#git-commit-messages)
-  * [Java Styleguide](#java-styleguide)
   * [Copyright Guidelines](#copyright-guidelines)
 
 [Project Governance](#project-governance)
@@ -120,7 +118,8 @@ Current Definition of Done:
 ### How-to begin
 
 Before you start your coding journey within the CoMPAS project, there are some things we have to talk about.
-Some things that will make your start a little bit easier!
+Some things that will make your start a little bit easier! 
+On the [developing](DEVELOPING.md) page information about tooling can be found.
 
 #### Open Community Calls
 It's good to know that every other monday, we are having a so called Open Community Call. Everyone participating in the CoMPAS project can join and talk about and ask question about the CoMPAS project. 
@@ -132,14 +131,9 @@ The agendas can be found at the [LF Energy wiki](https://wiki.lfenergy.org/displ
 If you have something to add, please add it to the agenda and notify everyone on Slack!
 
 #### Slack channel
-One of the first important things, is to meet the community. Feel free to introduce yourself on our [Slack channel](https://app.slack.com/client/TLU68MTML/C01926K9D39)!
+One of the first important things, is to meet the community. Feel free to introduce yourself by joining the channel 'compas' on [LF Energy Slack](https://slack.lfenergy.org/)! 
 
 The Slack channel is the first communication platform within the CoMPAS project (besides email and the Github platform), so if you need help for example you can use Slack!
-
-#### Github
-What's Github? It's where you're looking right now! (Joking!).
-
-We are using Github for hosting our Git repositories. Github is being used for creating issues and creating Pull Requests to review / merge each others code.
 
 #### Documenting
 A good (open source) project requires documentation.
@@ -148,127 +142,18 @@ We have two places for our documentation
 ##### LF Energy Wiki
 LF Energy has it's own [CoMPAS specific Wiki](https://wiki.lfenergy.org/display/HOME/CoMPAS). This is the place for documenation about CoMPAS in general (like roadmap and the community call agendas).
 
-##### CoMPAS Architecture Github Pages
-There is also a [Github Pages](https://com-pas.github.io/compas-architecture/) website for CoMPAS architecture specific topics.
+#### Architecture and technologies
+For all architecture and technology choices (for example frameworks, build tools, database choices, etcetera),
+please check the source code (duh!) and our [CoMPAS Architecture Github Pages](https://com-pas.github.io/compas-architecture/).
 
 #### Copyright and Licensing
-Copyright and license information is done on per-file basis. We use the specification of [REUSE](https://reuse.software/spec/) to ensure that copyright information of the project is clear and can be analuzed in an automated fashion.
+Copyright and license information is done on per-file basis. We use the specification of [REUSE](https://reuse.software/spec/) 
+to ensure that copyright information of the project is clear and can be analuzed in an automated fashion.
 
 Every source code repository within CoMPAS has a Github Action for checking against the REUSE specification.
 
 For more information, check the [Copyright Guidelines](#copyright-guidelines) section.
 
-#### LFX Security Tool
-For checking potential security issues, we use the [LFX Security Tool](https://security.lfx.linuxfoundation.org/#/e8b6fdf9-2686-44c5-bbaa-6965d04ad3e1/licenses). The LFX Security Tool scans selected repositories for potential security issues in dependencies. It also scans every license that is being used within a repository and checks if they are compatible within open source projects.
-
-#### SonarCloud
-CoMPAS is using [SonarCloud](https://sonarcloud.io/organizations/com-pas/projects) for static code analysis. Every Github repository has a Github Action which automatically pushes the code to SonarCloud with a frequency of the given Github Action (most of the time on each push).
-
-A Pull Request can't be merged before all SonarCloud issues are being fixed!
-
-#### Architecture and technologies
-For all architecture and technology choices (for example frameworks, build tools, database choices, etcetera), please check the source code (duh!) and our [CoMPAS Architecture Github Pages](https://com-pas.github.io/compas-architecture/).
-
-#### Github Packages
-To make artifacts between the different GIT repositories available we are using Guthub Packages to ditribute these.
-Every GIT repository can build its artifacts and publish these to Github Packages. 
-Other GIT repositories can then add Github Packages as Maven repository to their build tool.
-See below how to do both action for the specific tools.
-
-To use Github Packages a username and token is needed. The username is your Github username. The token can be genreate in Github by going to your settings, Developer settings, Personal access tokens.
-Generate a new token here and make sure that the scope "read:packages" is enabled. Use this token below to configure the build tools.
-
-#### Basic Maven
-The project uses Maven to manage the build. Most projects use multi-module structures to build all code. A basic command to run Maven is:
-```
-$ maven clean verify
-```
-#### Github Packages in Maven
-To use Github Packages in Maven an extra repository need to be added to the build process.
-```
-<repositories>
-    <repository>
-        <id>github-packages-compas</id>
-        <name>Github Packages CoMPAS</name>
-        <url>https://maven.pkg.github.com/com-pas/*</url>
-    </repository>
-</repositories>
-```
-Because credentials are needed for Github Packages, these will be passed by using the Settings.xml file.
-
-##### Local Settings.xml
-Edit (or create if not already exists) the `~/.m2/settings.xml` file and add the following content:
-```xml
-<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" 
-          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
-                              http://maven.apache.org/xsd/settings-1.0.0.xsd">
-  
-    <servers>
-        <server>
-            <id>github-packages-compas</id>
-            <username>username</username>
-            <password>password</password>
-        </server>
-    </servers>
-  
-</settings>
-```
-Add this server section. The ID of the server must be the same as the ID found in the previous repository ID, it should map.
-Username should be your Github username, password can both be your own [encrypted password](https://maven.apache.org/guides/mini/guide-encryption.html)
-or a [Personal Access Token](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token). 
-
-##### Settings.xml during Github Action
-During multiple Github Actions (like building and SonarCloud analysis), the `settings.xml` file is also needed because it needs access to the Github Packages
-to download certain artifacts. We can do this by adding the following step **before** the Github Packages is needed:
-```yaml
-- name: Create custom Maven Settings.xml
-  uses: whelk-io/maven-settings-xml-action@v18
-  with:
-    output_file: custom_maven_settings.xml
-    servers: '[{ "id": "github-packages-compas", "username": "OWNER", "password": "${{ secrets.GITHUB_TOKEN }}" }]'
-```
-This basically creates a custom `settings.xml` at location `custom_maven_settings.xml`. This file can be passed to maven in the next step
-by using `mvn -s custom_maven_settings.xml` and perhaps some extra parameters you wish for.
-
-For the `servers` part, we again have the `github-packages-compas` ID that needs to be the same. We have an `OWNER` username (this is the default, because
-it needs to have a username) and a password which is the GITHUB_TOKEN that's always available.
-
-#### IDEs
-If your IDE is supported by sonarlint (both IntelliJ IDEA and the Eclipse IDE are supported), it is recommended to install it. It provides immediate feedback on most sonar issues. Running tests individually is often possible in IDEs without invoking maven. Please consult the documentation of your IDE for setting up the project through maven integration.
-
-##### Intellij IDEA
-Import the project using IDEA's maven integration in the GUI. Install SonarLint. Code!
-
-##### Eclipse IDE
-Eclipse IDE has two ways to import maven projects: the eclipse GUI component m2e that understands maven or the maven CLI component maven-eclipse-plugin.
-
-Using maven-eclipse-plugin, it is possible to recreate all the necessary eclipse files from scratch. A practical way to use it and get deterministic results is to remove all existing eclipse files, delete all eclipse projects from the workspace, regenerate all the eclipse files and reimport everything into eclipse as "existing eclipse projects". If all your projects are checked out outside of the eclipse workspace on the file system, then deleting all the projects is even simpler because you can just delete the whole workspace. The whole cycle takes only a few seconds.
-```
-# Ensure that eclipse is not running
-# delete the projects in the GUI, or "rm -rf" all eclipse projects from the workspace
-# delete all eclipse files from the file system
-$ find . -name .project -o .classpath -o -name .settings -exec rm -rf '{}' \;
-# regenerate eclipse files
-$ mvn package eclipse:eclipse
-# import as existing eclipse projects in the GUI (alternatively, use eclim's :ProjectImportDiscover directly from ViM)
-```
-
-After importing the projects with either method, install SonarLint for quicker feedback on potential sonar issues.
-
-#### Adding custom badges to your README
-Badges are great for quickly checking several status reports of a specific repository.
-Sometimes a application doesn't serve badges ([LFX Security tool](https://security.lfx.linuxfoundation.org/) for example), and you need to do it yourself.
-We use [shields.io](https://shields.io/) for this problem.
-
-In case of the LFX Security Tool, we used the following:
-- Go to [shields.io](https://shields.io/).
-- Go to the 'Dynamic' section.
-- Choose JSON as data type.
-- Insert 'LFX Security Tool' as the label.
-- Insert the API to use, in case of our LFX Security tool projects we use [this API](https://api.security.lfx.linuxfoundation.org/v1/project/e8b6fdf9-2686-44c5-bbaa-6965d04ad3e1/issues).
-- Now you can query using JsonPath. To get all open high issues from the 'CoMPAS Core' project, use `issues[?(@['repository-name'] == 'compas-core')]['high-open-issues']`.
-- Choose a color and a pre- or surfix text.
 
 ### Github Project Boards
 For managing the CoMPAS issues created in all the separate repositories, we use the [Projects Board](https://github.com/orgs/com-pas/projects) of Github.
@@ -281,24 +166,6 @@ Changing the status of Issues / Pull Requests is also handled automatically by t
 Issues and Pull Requests can be moved on both the Project Boards and on the boards of the specific repository itself. It synchronizes automatically.
 
 ## Styleguides
-
-### Git Commit Messages
-
-As usual, please start the commit message with a short line describing the commit, then leave a blank line, then give more context and explanations. You can use GitHub's integrations, for exemple to link to existing issues. In general, pull requests with more than one commits will be squashed when merged in master.
-
-### Java StyleGuide
-
-- The project uses modern java, feel free to use any new APIs provided by the current java version (currently java 8).
-- New API classes and methods should be documented with javadoc. Write higher level documentation for classes and lower level documentation for methods. For example, ...
-- User-facing configuration options and general design decisions should be documented (where?)
-- We use standard configurations of well known tools like checkstyle and sonarqube to enforce a coherent coding style, please consult those tools for justifications on these rules.
-
-As a simple yet instructive example, consider ...
-```java
-/**
- * Example?
- */
-```
 
 ### Copyright Guidelines
 
