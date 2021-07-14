@@ -148,6 +148,7 @@ it needs to have a username) and a password which is the GITHUB_TOKEN that's alw
 
 To create a release of the software we are using the release functionality of GitHub. Under the tab 'code' there is a section
 'Releases'. When selected all current releases will be displayed, and a new release can be created (draft release).
+The standard branch to create a release from should be the "main" branch, so the code changes have been reviewed.
 
 For every repository that creates a software product (artifacts or docker images) a GitHub Action ('release-project.yml') 
 is defined. This action runs when a release is created. 
