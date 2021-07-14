@@ -101,7 +101,11 @@ As a simple yet instructive example, consider ...
 ```
 
 ## IDEs
-If your IDE is supported by sonarlint (both IntelliJ IDEA and the Eclipse IDE are supported), it is recommended to install it. It provides immediate feedback on most sonar issues. Running tests individually is often possible in IDEs without invoking maven. Please consult the documentation of your IDE for setting up the project through maven integration.
+If your IDE is supported by sonarlint (both IntelliJ IDEA and the Eclipse IDE are supported), it is recommended to install it. 
+It provides immediate feedback on most sonar issues. Running tests individually is often possible in IDEs without invoking maven. 
+Please consult the documentation of your IDE for setting up the project through maven integration.
+
+For MapStruct there are plugins available for both IDEs mentioned below. See this [page](https://mapstruct.org/documentation/ide-support/).
 
 ### Intellij IDEA
 Import the project using IDEA's maven integration in the GUI. Install SonarLint. Code!
