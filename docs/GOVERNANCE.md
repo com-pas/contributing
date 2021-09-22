@@ -14,7 +14,7 @@ CoMPAS is part of the [LF Energy Foundation](https://www.lfenergy.org/), a proje
 
 ## Technical Charter
 
-The Project's [Technical Charter](CoMPAS%20Technical%20Charter%207-6-2020.pdf) sets forth the responsibilities and procedures for technical contribution to, and oversight of, the COMPAS Project.
+The Project's [Technical Charter](blob-files/CoMPAS_Technical_Charter_2020-06-07.pdf) sets forth the responsibilities and procedures for technical contribution to, and oversight of, the COMPAS Project.
 
 ## Committers
 

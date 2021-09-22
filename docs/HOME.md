@@ -72,7 +72,7 @@ Code Contribution is tracked as [GitHub Pull Requests](https://help.github.com/e
 Please follow these steps to have your contribution considered by the maintainers:
 
 1. Follow all instructions in [the template](PULL_REQUEST_TEMPLATE.md)
-2. Follow the [styleguides](#styleguides)
+2. Follow the [styleguides](STYLEGUIDE.md)
 3. After you submit your pull request, verify that all [status checks](https://help.github.com/articles/about-status-checks/) are passing.
 5. Request a GitHub review by one of the projects' Committers
 6. Follow their instructions or discuss about the requested changes. Please don't take criticism personally, it is normal to iterate on this step several times.
@@ -143,7 +143,7 @@ to ensure that copyright information of the project is clear and can be analuzed
 
 Every source code repository within CoMPAS has a Github Action for checking against the REUSE specification.
 
-For more information, check the [Copyright Guidelines](#copyright-guidelines) section.
+For more information, check the [Copyright Guidelines](STYLEGUIDE.md#copyright-guidelines) section.
 
 
 ### Github Project Boards

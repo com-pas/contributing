@@ -9,7 +9,9 @@
 
 Contributing to the CoMPAS project also requires to use correct copyright headers in source files.
 
-For each CoMPAS repository, we created / will create a Github Action featuring [REUSE](https://reuse.software/). REUSE is a piece of software which checks for correct copyright information in files defined in a [specification](https://reuse.software/spec/). The specification is based on best practices and the use of [SPDX](https://spdx.dev/) identifiers.
+For each CoMPAS repository, we created / will create a Github Action featuring [REUSE](https://reuse.software/). 
+REUSE is a piece of software which checks for correct copyright information in files defined in a [specification](https://reuse.software/spec/). 
+The specification is based on best practices and the use of [SPDX](https://spdx.dev/) identifiers.
 
 Example Alliander copyright header for Java files:
 ```Java
