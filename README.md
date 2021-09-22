@@ -2,8 +2,6 @@
 
 ## Mission
 
-Test 1
-
 The mission of the **CoMPAS** project is to **develop open source software components** related to **IEC 61850 model implementation
 (profile management) and configuration** of a power industry Protection Automation and Control System (PACS).
 
