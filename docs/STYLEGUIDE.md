@@ -1,8 +1,9 @@
-[Styleguides](#styleguides)
+# Styleguides
+
+#### Table Of Contents
+
 * [Copyright Guidelines](#copyright-guidelines)
 * [English language convention](#cnglish-language-convention)
-
-# Styleguides
 
 ## Copyright Guidelines
 
