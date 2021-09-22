@@ -26,4 +26,4 @@ defaults:
     scope:
       path: "HOME.md"
     values:
-      permalink: "HOME.html"
+      permalink: "/"
