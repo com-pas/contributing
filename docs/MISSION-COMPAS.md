@@ -31,11 +31,3 @@ The design of the new DSAS will have to allow for a drastically higher level of 
 compared to the previous generations. An open source collaboration is essential to meet those requirements in a cost-efficient way 
 by sharing the effort through a leveraged development approach that involves all stakeholders from equipment manufacturers 
 to end-users, fostering vendor-agnostic implementations and convergence of utility practices.
-
-## Presentations
-
-CoMPAS presentations can be added to the presentations for re-use.
-
-## Contributing
-
-Interested in contributing? Please read carefully the [CONTRIBUTING guidelines](/CONTRIBUTING.md).

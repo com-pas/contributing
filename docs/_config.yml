@@ -24,6 +24,6 @@ source:           ./pages
 defaults:
   - 
     scope:
-      path: "README.md"
+      path: "HOME.md"
     values:
-      permalink: "README.html"
+      permalink: "HOME.html"
