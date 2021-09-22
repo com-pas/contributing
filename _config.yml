@@ -19,6 +19,7 @@ git_repo:         contributing
 git_branch:       master
 
 baseurl:          /contributing
+source:           ./pages
 
 defaults:
   - 
