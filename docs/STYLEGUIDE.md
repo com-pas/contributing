@@ -3,7 +3,7 @@
 #### Table Of Contents
 
 * [Copyright Guidelines](#copyright-guidelines)
-* [English language convention](#cnglish-language-convention)
+* [English language convention](#english-language-convention)
 
 ## Copyright Guidelines
 
