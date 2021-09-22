@@ -1,6 +1,6 @@
-# CoMPAS - (Co)nfiguration (M)odules for (P)ower industry (A)utomation (S)ystems
+# Mission
 
-## Mission
+## CoMPAS - (Co)nfiguration (M)odules for (P)ower industry (A)utomation (S)ystems
 
 The mission of the **CoMPAS** project is to **develop open source software components** related to **IEC 61850 model implementation
 (profile management) and configuration** of a power industry Protection Automation and Control System (PACS).

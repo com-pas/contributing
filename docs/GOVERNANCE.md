@@ -1,4 +1,4 @@
-# Project Governance
+# Governance
 
 #### Table Of Contents
 
