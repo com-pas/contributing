@@ -4,10 +4,10 @@ SPDX-FileCopyrightText: 2021 Alliander N.V.
 SPDX-License-Identifier: CC-BY-4.0
 -->
 
-## Deployment of CoMPAS
+# Deployment of CoMPAS
 We deploy the (native) Docker image of all CoMPAS services to Docker Hub. This way, it can be pulled and deployed into environments of your choice (OpenShift for example).
 
-### Quick Deployment instructions (under construction)
+## Quick Deployment instructions (under construction)
 The following instructions are terminal instructions for publishing a Quarkus docker image to Docker Hub. This should be done by a Github Action in the future.
 
 ```
@@ -26,6 +26,6 @@ Few points in this single command:
 - `-Dquarkus.container-image.name=name` defining the name of the image. Standard it's 'app'.
 - `-Dquarkus.container-image.push=true` deploys to docker image to Docker Hub.
 
-## Sources
-#### Full documentation about deploying Quarkus application to Docker Hub
-https://dev.to/marcuspaulo/tutorial-publish-a-quarkus-application-in-kubernetes-minikube-and-dockerhub-36nd
+# Sources
+
+[Full documentation about deploying Quarkus application to Docker Hub](https://dev.to/marcuspaulo/tutorial-publish-a-quarkus-application-in-kubernetes-minikube-and-dockerhub-36nd)

@@ -4,9 +4,9 @@ SPDX-FileCopyrightText: 2021 Alliander N.V.
 SPDX-License-Identifier: CC-BY-4.0
 -->
 
-## Dependabot
+# Dependabot
 
-### Configure Dependabot Settings
+## Configure Dependabot Settings
 
 The first step is that we want to enable Alerts from Dependabot. This needs to be done for every repository that 
 uses Dependabot. Go to the settings of the repository and select "Security & analysis". Next enable "Dependabot alerts"
@@ -14,7 +14,7 @@ and "Dependabot security updates".
 
 Also remember to give the repository access to the secret DB_GITHUB_PACKAGES at organization level.
 
-### Configure Dependabot (yaml)
+## Configure Dependabot (yaml)
 
 Next step is to add a configuration file to the repository that will enable Dependabot. In the repository create a 
 file "dependabot.yml" in the directory ".github". The basic content will be something like
@@ -80,7 +80,7 @@ the JAXB Implementation can't higher.
 Dependabot uses the configuration found in the default branch (often 'develop'), so to make it effective use a 
 pull request to merge it into the default branch.
 
-### Adding Dependabot Secret DB_GITHUB_PACKAGES
+## Adding Dependabot Secret DB_GITHUB_PACKAGES
 
 Tot access GitHub Packages a secret DB_GITHUB_PACKAGES needs to be created.
 - First create a new personal access token from https://github.com/settings/tokens. Tokens can only be created as personal tokens.
@@ -91,7 +91,7 @@ Tot access GitHub Packages a secret DB_GITHUB_PACKAGES needs to be created.
 
 Now Dependabot can use this secret to access GitHub Packages.
 
-### Handling the pull request
+## Handling the pull request
 
 Pull request created by Dependabot can be handled just like other pull request, but there is 1 issue to know.  
 Some GitHub Actions, like SonarCloud and AutomateProjects, will fail if they are started by the pull request from

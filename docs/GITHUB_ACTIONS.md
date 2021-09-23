@@ -4,7 +4,7 @@ SPDX-FileCopyrightText: 2021 Alliander N.V.
 SPDX-License-Identifier: CC-BY-4.0
 -->
 
-## Github Actions
+# Github Actions
 Every repository within the CoMPAS Github organization need a default set of Github Actions.
 [Github Actions](https://github.com/features/actions) are CI/CD steps within a Github Repository that you can configure. This way, you can ensure that certain steps (like building) are always triggered on for example a commit push.
 
@@ -18,7 +18,7 @@ More to follow.
 
 Github Actions are configured using YAML files. These files are stored in the `.github/workflows` directory of a specific repository.
 
-### Building
+## Building
 All source code repositories need some kind of building step.
 By default, all source code repositories use Maven as the build tool.
 
@@ -57,7 +57,7 @@ A few points to remember:
   check the [Contributing file](https://github.com/com-pas/contributing/blob/master/CONTRIBUTING.md).
 - (3): This is a default for building a Maven project. It may differ in some cases, please feel free to adjust it.
 
-### REUSE check
+## REUSE check
 For keeping our copyright and licensing information up to date and correct, we use [REUSE](https://reuse.software/) to check this. This is also configured for every separate repository in an easy manner: just create a `reuse.yml` file in the `.github/workflows` directory containing the following source code:
 
 ```yaml
@@ -79,7 +79,7 @@ A few points to remember:
 
 This is the only thing that has to be done. After this, it will be checked on every push.
 
-#### REUSE badge
+### REUSE badge
 For transparancy, CoMPAS repositories also include a REUSE badge in their README for fast checking the REUSE compliance.
 
 Two steps are needed to get a REUSE badge to work:
@@ -95,7 +95,7 @@ There is one steps left: Replace `repoName` with the name of the specific reposi
 
 After doing all these steps, everything is set up for the REUSE check.
 
-### SonarCloud
+## SonarCloud
 For static code analysis, CoMPAS is using [SonarCloud](https://sonarcloud.io/). To configure this, there are several steps that needs to be done.
 
 1. Go to the [CoMPAS Github organization settings](https://github.com/organizations/com-pas/settings/profile), and click on "Installed Github Apps". SonarCloud is listed here already (because we are already using it). Click on the 'configure' button next to it.
@@ -162,7 +162,7 @@ A few points to remember:
 
 Once this is set, it's all done!
 
-### Docker Hub Deployment
+## Docker Hub Deployment
 For automatic deployment of our microservices, CoMPAS uses Docker Hub as the central docker image repository. This way, all Docker images can be pulled from a central image repository.
 
 This step is easy to configure. Just create a `dockerhub_deployment.yml` file in the `.github/workflows` directory containing the following source code:
