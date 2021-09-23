@@ -1,9 +1,3 @@
-<!--
-SPDX-FileCopyrightText: 2021 Alliander N.V.
-
-SPDX-License-Identifier: CC-BY-4.0
--->
-
 # Deployment of CoMPAS
 We deploy the (native) Docker image of all CoMPAS services to Docker Hub. This way, it can be pulled and deployed into environments of your choice (OpenShift for example).
 

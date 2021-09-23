@@ -1,9 +1,3 @@
-<!--
-SPDX-FileCopyrightText: 2021 Alliander N.V.
-
-SPDX-License-Identifier: CC-BY-4.0
--->
-
 # Github Actions
 Every repository within the CoMPAS Github organization need a default set of Github Actions.
 [Github Actions](https://github.com/features/actions) are CI/CD steps within a Github Repository that you can configure. This way, you can ensure that certain steps (like building) are always triggered on for example a commit push.
