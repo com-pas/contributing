@@ -5,6 +5,7 @@
 * [Project Owner](#project-owner)
 * [Technical Charter](#technical-charter)
 * [Committers](#committers)
+* [Responsibilities](#responsibilities)
 * [Technical Steering Committee](#technical-steering-committee)
 * [Contributors](#contributors)
 
@@ -25,12 +26,25 @@ write code directly to the repository and screen the contributions of others. In
 but it is also possible that they contribute in a different role. Typically, a committer will focus on a specific aspect 
 of the project, and will bring a level of expertise and understanding that earns them the respect of the community and the project owner.
 
+## Responsibilities
+
+The project is split into several repositories. There is at least one Committer in charge of each repository.
+By "in charge", we mean:
+- best effort to review the pull request,
+- best effort to resolve issues,
+- building and publishing the releases, including writing the release notes and informing the community,
+- in case of inability to perform the above tasks, the Committer in charge has to ask the TSC through the list
+  [CoMPAS-tsc@lists.lfenergy.org](mailto:CoMPAS-tsc@lists.lfenergy.org) to find another Committer to review the pull request,
+  resolve the issue or build and publish the release.
+
+Please refer to our [commiters file](https://github.com/com-pas/contributing/blob/master/COMMITERS.md) for more details about our work division.
+
 ## Technical Steering Committee
 
 The Technical Steering Committee (TSC) is composed of voting members elected by the active Committers as described in the 
 project’s Technical Charter. The TSC is responsible for the technical direction of the project.
 
-## Members
+### Members
 
 CoMPAS TSC voting members are:
 - Norbert Armand (https://github.com/Norbert-armand)
@@ -40,24 +54,11 @@ CoMPAS TSC voting members are:
 - Sander Jansen (https://github.com/Sander3003)
 - Rob Tjalma (https://github.com/Flurb)
 
-## Voting
+### Voting
 
 While the Project aims to operate as a consensus-based community, if any TSC decision requires a vote to move the Project 
 forward, the voting members of the TSC will vote on a one vote per voting member basis. The simple majority is needed to approve proposals.
 The preferred way to vote is to create a poll [here](https://lists.lfenergy.org/g/CoMPAS-tsc/addpoll).
-
-## Responsibilities
-
-The project is split into several repositories. There is at least one Committer in charge of each repository. 
-By "in charge", we mean:
-- best effort to review the pull request,
-- best effort to resolve issues,
-- building and publishing the releases, including writing the release notes and informing the community,
-- in case of inability to perform the above tasks, the Committer in charge has to ask the TSC through the list 
-  [CoMPAS-tsc@lists.lfenergy.org](mailto:CoMPAS-tsc@lists.lfenergy.org) to find another Committer to review the pull request, 
-  resolve the issue or build and publish the release.
-
-Please refer to our [commiters file](https://github.com/com-pas/contributing/blob/master/COMMITERS.md) for more details about our work division.
 
 ## Contributors
 

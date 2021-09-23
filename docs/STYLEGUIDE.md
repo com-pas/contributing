@@ -2,10 +2,16 @@
 
 #### Table Of Contents
 
-* [Copyright Guidelines](#copyright-guidelines)
-* [Git Commit Messages](#git-commit-messages)
-* [Java StyleGuide](#java-styleGuide)
 * [English language convention](#english-language-convention)
+* [Copyright Guidelines](#copyright-guidelines)
+* [Java StyleGuide](#java-styleGuide)
+* [Git Commit Messages](#git-commit-messages)
+
+## English language convention
+
+The convention for all the project's documents, including code documentation, website, is to write American English.
+A list of spelling differences between British and American English is available
+[here](https://www.britishcouncilfoundation.id/en/english/articles/british-and-american-english) for example.
 
 ## Copyright Guidelines
 
@@ -27,11 +33,6 @@ Every commit on a Pull Request is being scanned by REUSE. If it fails, the pull 
 For more tips on using REUSE (for example with a small command line tool), check the 
 [Tips: Copyright & Licensing](https://wiki.lfenergy.org/pages/viewpage.action?pageId=10996220) wiki page.
 
-## Git Commit Messages
-
-As usual, please start the commit message with a short line describing the commit, then leave a blank line, then give more context and explanations.
-You can use GitHub's integrations, for exemple to link to existing issues. In general, pull requests with more than one commits will be squashed when merged in master.
-
 ## Java StyleGuide
 
 - The project uses modern java, feel free to use any new APIs provided by the current java version (currently java 11).
@@ -46,8 +47,7 @@ As a simple yet instructive example, consider ...
  */
 ```
 
-## English language convention
+## Git Commit Messages
 
-The convention for all the project's documents, including code documentation, website, is to write American English.
-A list of spelling differences between British and American English is available
-[here](https://www.britishcouncilfoundation.id/en/english/articles/british-and-american-english) for example.
+As usual, please start the commit message with a short line describing the commit, then leave a blank line, then give more context and explanations.
+You can use GitHub's integrations, for exemple to link to existing issues. In general, pull requests with more than one commits will be squashed when merged in master.
