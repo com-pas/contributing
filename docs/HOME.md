@@ -21,6 +21,8 @@ Use your best judgment, and feel free to propose changes to this document in a p
 * [Copyright and Licensing](#copyright-and-licensing)
 * [Github Project Boards](#github-project-boards)
 
+[Github Pages](#github-pages)
+
 
 ## Code of Conduct
 
@@ -175,4 +177,12 @@ Changing the status of Issues / Pull Requests is also handled automatically by t
 
 Issues and Pull Requests can be moved on both the Project Boards and on the boards of the specific repository itself. It synchronizes automatically.
 
+## Github Pages
 
+This site is provided as a [github pages site](https://com-pas.github.io/contributing/).
+The content is maintained and edited on [Github](https://github.com/com-pas/contributing) in the directory "docs".
+Contributors are only allowed to contribute by editing the content on Github and must do so by presenting their modifications as *pull-request* to the community.
+The diagrams on this page are created using [DrawIO](https://github.com/jgraph/drawio-desktop/releases)
+and follow [Unified Modeling Language (UML)](https://www.omg.org/spec/UML/).
+The drawIO design file is available on this site: [/blob-files/CoMPAS.drawio](blob-files/CoMPAS.drawio).
+Modification made to UML diagrams on this site must be made in this file and the modified file must be part of the pull request.
