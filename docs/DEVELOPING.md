@@ -3,7 +3,6 @@
 #### Table Of Contents
 
 * [Tooling](#tooling)
-* [Styleguides](#styleguides)
 * [IDEs](#ides)
 * [GitHub Actions](#github-actions)
 * [Others](#others)
@@ -44,7 +43,7 @@ The project uses Maven to manage the build. Most projects use multi-module struc
 $ maven clean verify
 ```
 
-### GitHub Packages in Maven
+#### GitHub Packages in Maven
 To use GitHub Packages in Maven an extra repository need to be added to the build process.
 ```xml
 <repositories>
@@ -57,7 +56,7 @@ To use GitHub Packages in Maven an extra repository need to be added to the buil
 ```
 Because credentials are needed for GitHub Packages, these will be passed by using the Settings.xml file.
 
-### Maven Local Settings.xml for GitHub Packages
+#### Maven Local Settings.xml for GitHub Packages
 Edit (or create if not already exists) the `~/.m2/settings.xml` file and add the following content:
 ```xml
 <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" 
@@ -79,26 +78,6 @@ Edit (or create if not already exists) the `~/.m2/settings.xml` file and add the
 Add this server section. The ID of the server must be the same as the ID found in the previous repository ID, it should map.
 Username should be your GitHub username, password can both be your own [encrypted password](https://maven.apache.org/guides/mini/guide-encryption.html)
 or a [Personal Access Token](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token).
-
-## Styleguides
-
-### Git Commit Messages
-
-As usual, please start the commit message with a short line describing the commit, then leave a blank line, then give more context and explanations. You can use GitHub's integrations, for exemple to link to existing issues. In general, pull requests with more than one commits will be squashed when merged in master.
-
-### Java StyleGuide
-
-- The project uses modern java, feel free to use any new APIs provided by the current java version (currently java 8).
-- New API classes and methods should be documented with javadoc. Write higher level documentation for classes and lower level documentation for methods. For example, ...
-- User-facing configuration options and general design decisions should be documented (where?)
-- We use standard configurations of well known tools like checkstyle and sonarqube to enforce a coherent coding style, please consult those tools for justifications on these rules.
-
-As a simple yet instructive example, consider ...
-```java
-/**
- * Example?
- */
-```
 
 ## IDEs
 If your IDE is supported by sonarlint (both IntelliJ IDEA and the Eclipse IDE are supported), it is recommended to install it. 

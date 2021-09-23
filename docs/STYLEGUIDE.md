@@ -3,11 +3,13 @@
 #### Table Of Contents
 
 * [Copyright Guidelines](#copyright-guidelines)
+* [Git Commit Messages](#git-commit-messages)
+* [Java StyleGuide](#java-styleGuide)
 * [English language convention](#english-language-convention)
 
 ## Copyright Guidelines
 
-Contributing to the CoMPAS project also requires to use correct copyright headers in source files.
+Contributing to the CoMPAS project also requires using correct copyright headers in source files.
 
 For each CoMPAS repository, we created / will create a Github Action featuring [REUSE](https://reuse.software/). 
 REUSE is a piece of software which checks for correct copyright information in files defined in a [specification](https://reuse.software/spec/). 
@@ -22,7 +24,27 @@ Example Alliander copyright header for Java files:
 
 Every commit on a Pull Request is being scanned by REUSE. If it fails, the pull requests cannot be merged.
 
-For more tips on using REUSE (for example with a small command line tool), check the [Tips: Copyright & Licensing](https://wiki.lfenergy.org/pages/viewpage.action?pageId=10996220) wiki page.
+For more tips on using REUSE (for example with a small command line tool), check the 
+[Tips: Copyright & Licensing](https://wiki.lfenergy.org/pages/viewpage.action?pageId=10996220) wiki page.
+
+## Git Commit Messages
+
+As usual, please start the commit message with a short line describing the commit, then leave a blank line, then give more context and explanations.
+You can use GitHub's integrations, for exemple to link to existing issues. In general, pull requests with more than one commits will be squashed when merged in master.
+
+## Java StyleGuide
+
+- The project uses modern java, feel free to use any new APIs provided by the current java version (currently java 11).
+- New API classes and methods should be documented with javadoc. Write higher level documentation for classes and lower level documentation for methods. For example, ...
+- User-facing configuration options and general design decisions should be documented (where?)
+- We use standard configurations of well known tools like checkstyle and sonarqube to enforce a coherent coding style, please consult those tools for justifications on these rules.
+
+As a simple yet instructive example, consider ...
+```java
+/**
+ * Example?
+ */
+```
 
 ## English language convention
 
