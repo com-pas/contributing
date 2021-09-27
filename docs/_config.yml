@@ -1,0 +1,28 @@
+# SPDX-FileCopyrightText: 2021 Alliander N.V.
+#
+# SPDX-License-Identifier: CC-BY-4.0
+
+# Setup
+title:            CoMPAS Contributing
+tagline:          'Contributing to the CoMPAS project'
+
+paginate:         5
+
+# Custom vars
+version:          0.0.1
+
+github:
+  repo:           https://github.com/com-pas/contributing
+
+github_username:  com-pas
+git_repo:         contributing
+git_branch:       master
+
+baseurl:          /contributing
+
+defaults:
+  - 
+    scope:
+      path: "HOME.md"
+    values:
+      permalink: "/"
