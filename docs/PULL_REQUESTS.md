@@ -25,3 +25,5 @@ The following labels cause the pull request to be ignored in the release notes:
 - ``wontfix``
 - ``duplicate``
 - ``invalid``
+
+**Remark**: The label ``tooling`` is not a standard label, so that may need to be created by the first developer using it.
