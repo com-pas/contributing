@@ -13,7 +13,7 @@
 What's GitHub? It's where you're looking right now! (Joking!).
 
 We are using GitHub for hosting our Git repositories. GitHub is being used for creating issues and creating Pull 
-Requests to review / merge each others code.
+Requests to review / merge each other's code.
 
 ### LFX Security Tool
 For checking potential security issues, we use the [LFX Security Tool](https://security.lfx.linuxfoundation.org/#/e8b6fdf9-2686-44c5-bbaa-6965d04ad3e1/licenses). 
@@ -33,7 +33,7 @@ Every GIT repository can build its artifacts and publish these to GitHub Package
 Other GIT repositories can then add GitHub Packages as Maven repository to their build tool.
 See below how to do both action for the specific tools.
 
-To use GitHub Packages a username and token is needed. The username is your GitHub username. The token can be generate 
+To use GitHub Packages a username and token is needed. The username is your GitHub username. The token can be generated 
 in GitHub by going to your settings, Developer settings, Personal access tokens.
 Generate a new token here and make sure that the scope "read:packages" is enabled. Use this token below to configure the build tools.
 
@@ -105,70 +105,6 @@ $ mvn package eclipse:eclipse
 
 After importing the projects with either method, install SonarLint for quicker feedback on potential sonar issues.
 
-## GitHub Actions
-
-### Settings.xml during GitHub Action for GitHub Packages
-During multiple GitHub Actions (like building and SonarCloud analysis), the custom `settings.xml` file is needed because it needs access to the GitHub Packages
-to download certain artifacts. We can do this by adding the following step **before** the GitHub Packages repository is needed.
-
-```yaml
-- name: Create custom Maven Settings.xml
-  uses: whelk-io/maven-settings-xml-action@v18
-  with:
-    output_file: custom_maven_settings.xml
-    servers: '[{ "id": "github-packages-compas", "username": "OWNER", "password": "${{ secrets.GITHUB_TOKEN }}" }]'
-```
-
-This basically creates a custom `settings.xml` at location `custom_maven_settings.xml`. This file can be passed to maven in the next step
-by using `mvn -s custom_maven_settings.xml` and perhaps some extra parameters you wish for.
-
-For the `servers` part, we again have the `github-packages-compas` ID that needs to be the same. We have an `OWNER` username (this is the default, because
-it needs to have a username) and a password which is the GITHUB_TOKEN that's always available.
-
-## Releasing software
-
-### Create a release
-
-To create a release of the software we are using the release functionality of GitHub. Under the tab 'code' there is a section
-'Releases'. When selected all current releases will be displayed, and a new release can be created (draft release).
-The standard branch to create a release from should be the "main" branch, so the code changes have been reviewed.
-
-For every repository that creates a software product (artifacts or docker images) a GitHub Action ('release-project.yml') 
-is defined. This action runs when a release is created. 
-```yaml
-on:
-  release:
-    types: [released]
-```
-
-Depending on the type of project different steps will be executed. 
-Common steps are:
-- Checking out the source code,
-- Extracting the entered version from the Git Tag.
-- Set version using Maven
-- Setup Maven settings.xml file
-
-Depending on the type of project other steps will be executed. Some examples are:
-- Build and publish the software to GitHub Packages using Maven
-- Build and publish the docker image to DockerHub using Maven
-- Build and publish the docker image to DockerHub using NPM and Docker
-
-### Publish artifacts using Maven
-
-To publish artifacts to GiHub Packages a distribution section needs to be added to pom.xml of the root.
-```xml
-<distributionManagement>
-    <repository>
-        <id>github-packages-compas</id>
-        <name>GitHub Packages</name>
-        <url>https://maven.pkg.github.com/com-pas/[repo-name]</url>
-    </repository>
-</distributionManagement>
-```
-The ID is the same as the ID used for the repository section [above](#github-packages-in-maven).
-This way the same credentials will be used to connect to GitHub Packages as described [above](#maven-local-settingsxml-for-github-packages).
-Replace "[repo-name]" with the name of the repository from CoMPAS.
-
 ## Others
 
 ### Adding custom badges to your README
@@ -183,4 +119,4 @@ In case of the LFX Security Tool, we used the following:
 - Insert 'LFX Security Tool' as the label.
 - Insert the API to use, in case of our LFX Security tool projects we use [this API](https://api.security.lfx.linuxfoundation.org/v1/project/e8b6fdf9-2686-44c5-bbaa-6965d04ad3e1/issues).
 - Now you can query using JsonPath. To get all open high issues from the 'CoMPAS Core' project, use `issues[?(@['repository-name'] == 'compas-core')]['high-open-issues']`.
-- Choose a color and a pre- or surfix text.
+- Choose a color and a pre- or suffix text.
