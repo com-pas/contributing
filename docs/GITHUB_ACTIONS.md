@@ -12,6 +12,24 @@ More to follow.
 
 Github Actions are configured using YAML files. These files are stored in the `.github/workflows` directory of a specific repository.
 
+## Maven settings.xml during GitHub Action for GitHub Packages
+During multiple GitHub Actions (like building and SonarCloud analysis), the custom `settings.xml` file is needed because it needs access to the GitHub Packages
+to download certain artifacts. We can do this by adding the following step **before** the GitHub Packages repository is needed.
+
+```yaml
+- name: Create custom Maven Settings.xml
+  uses: whelk-io/maven-settings-xml-action@v18
+  with:
+    output_file: custom_maven_settings.xml
+    servers: '[{ "id": "github-packages-compas", "username": "OWNER", "password": "${{ secrets.GITHUB_TOKEN }}" }]'
+```
+
+This basically creates a custom `settings.xml` at location `custom_maven_settings.xml`. This file can be passed to maven in the next step
+by using `mvn -s custom_maven_settings.xml` and perhaps some extra parameters you wish for.
+
+For the `servers` part, we again have the `github-packages-compas` ID that needs to be the same. We have an `OWNER` username (this is the default, because
+it needs to have a username) and a password which is the GITHUB_TOKEN that's always available.
+
 ## Building
 All source code repositories need some kind of building step.
 By default, all source code repositories use Maven as the build tool.
