@@ -22,7 +22,7 @@ Please find hereunder our work division:
 - Release: all committers
 
 **compas-sct**
-- Review: [Flurb](https://github.com/Flurb), [SteVigGE](https://github.com/SteVigGE), [syllamoh](https://github.com/mathbagu) and [FredFousPro](https://github.com/FredFousPro)
-- Release: [SteVigGE](https://github.com/SteVigGE), [syllamoh](https://github.com/mathbagu) and [FredFousPro](https://github.com/FredFousPro)
+- Review: [Flurb](https://github.com/Flurb), [legrosjf](https://github.com/legrosjf), [AliouDIAITE](https://github.com/AliouDIAITE) and [FredFousPro](https://github.com/FredFousPro)
+- Release: [legrosjf](https://github.com/legrosjf), [AliouDIAITE](https://github.com/AliouDIAITE) and [FredFousPro](https://github.com/FredFousPro)
 
 
