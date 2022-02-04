@@ -47,10 +47,10 @@ project’s Technical Charter. The TSC is responsible for the technical directio
 ### Members
 
 CoMPAS TSC voting members are:
-- Norbert Armand (https://github.com/Norbert-armand)
+- Patrick Montaner (https://github.com/PatrickMontaner)
 - Frédéric Fousseret (https://github.com/FredFousPro)
-- Mohamed Sylla (https://github.com/syllamoh)
-- Stevan Vigouroux (https://github.com/SteVigGE)
+- Aliou Diaité (https://github.com/AliouDIAITE)
+- Jean-François Legros (https://github.com/legrosjf)
 - Sander Jansen (https://github.com/Sander3003)
 - Rob Tjalma (https://github.com/Flurb)
 
