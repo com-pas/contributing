@@ -11,10 +11,10 @@ Below tokens are al registered under the CoMPAS Organisation as Action Secret.
 
 | Token Name               | Owner           | Expire Date |
 |--------------------------|-----------------|-------------|
-| DOCKER_HUB_USERNAME      | Rob Tjalma      | ?           |
-| DOCKER_HUB_TOKEN         | Rob Tjalma      | ?           |
+| DOCKER_HUB_USERNAME      | LF Energy User  | -           |
+| DOCKER_HUB_TOKEN         | LF Energy User  | -           |
 | ORG_GITHUB_ACTION_SECRET | Dennis Labordus | 31/12/2022  |
-| SONAR_TOKEN              | Rob Tjalma      | ?           |
+| SONAR_TOKEN              | CoMPAS General  | -           |
 
 Below tokens are al registered under the CoMPAS Organisation as Dependabot Secret.
 
