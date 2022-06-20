@@ -60,13 +60,15 @@ Note that checks will be performed during the integration in order to require th
 
 ### Reporting Bugs and Suggesting Enhancements
 
-Bugs and enhancement suggestions are tracked as [GitHub issues](https://guides.github.com/features/issues/). Create an issue 
-and provide the following information by filling in [the template](ISSUE_TEMPLATE.md).
+Bugs and enhancement suggestions are tracked as [GitHub issues](https://guides.github.com/features/issues/). Create an issue in the repository where it belongs (an issue about the CIM to IEC 61850 mapping belongs in the [CIM Mapping repository](https://github.com/com-pas/compas-cim-mapping) for example) and provide the following information by filling in [the template](../.github/ISSUE_TEMPLATE.md). If your request is a feature, you only need to fill in the `When requesting a feature` section. If it's a bug, fill in the `When reporting a bug` section.
+
+When an issue is created, it is automatically being added to the `To do` column of the specific repository. This means it's added, but not yet refined. Every monday at 10AM CET, there is a Community Refinement (see our mailing list [calendar](https://lists.lfenergy.org/g/CoMPAS/calendar), everybody can join) where issues are being discussed that are not refined yet. Your issue is one of them.
+Once it's accepted and refined, it goes to the `Ready for development` column and it's ready to be implemented/fixed.
 
 Before creating bug reports or suggesting enhancement, please **perform a [cursory search](https://github.com/search?q=+is%3Aissue+user%3Acom-pas)** 
-to see if the problem has already been reported. If it has **and the issue is still open**, add a comment to the existing issue instead of opening a new one.
+to see if the problem has already been reported. You can add a search term to the upper left search bar. If it has **and the issue is still open**, add a comment to the existing issue instead of opening a new one.
 
-You can also contact the team directly to talk about your ideas at [CoMPAS-dev@lists.lfenergy.org](mailto:CoMPAS-dev@lists.lfenergy.org).
+When in doubt, ask your question on our [LFEnergy slack](https://lfenergy.slack.com/) in the `#compas` channel. Or you can contact the team directly to talk about your ideas at [CoMPAS-dev@lists.lfenergy.org](mailto:CoMPAS@lists.lfenergy.org).
 
 > **Note:** If you find a **Closed** issue that seems like it is the same thing that you're experiencing, open a new issue and include a link to the original issue in the body of your new one.
 

@@ -16,10 +16,11 @@ request is used to generate the release notes.
   - ``enhancement``: The pull request adds as a new feature.
   - ``bug``: The pull request solves a bugfix.
   - ``tooling``: Change or update to tooling used to build project.
+- **Linking issue**: Link the correct issue using one of the [keywords](https://docs.github.com/en/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue) in the description, for example `closes #1234`. **This only works when the PR is being merged to the default branch**.
 
 There is a special label  ``dependencies`` used by dependabot for updating dependencies.
-These are grouped together in a separate section.  
-If no label is added the pull request will be added to the section ``Other Changes`` at the bottom of the release notes. 
+These are grouped together in a separate section.
+If no label is added the pull request will be added to the section ``Other Changes`` at the bottom of the release notes.
 
 The following labels cause the pull request to be ignored in the release notes:
 - ``wontfix``
