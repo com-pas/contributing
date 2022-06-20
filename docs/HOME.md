@@ -83,7 +83,7 @@ The iterative process has several goals:
 
 Please follow these steps to have your contribution considered by the maintainers:
 
-1. Follow all instructions in [the template](PULL_REQUEST_TEMPLATE.md)
+1. Follow all instructions in the [pull requests section](PULL_REQUESTS.md)
 2. Follow the [styleguides](STYLEGUIDE.md)
 3. After you submit your pull request, verify that all [status checks](https://help.github.com/articles/about-status-checks/) are passing.
 5. Request a GitHub review by one of the projects' Committers
