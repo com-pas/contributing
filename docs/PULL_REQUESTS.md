@@ -19,7 +19,7 @@ request is used to generate the release notes.
 
 There is a special label  ``dependencies`` used by dependabot for updating dependencies.
 These are grouped together in a separate section.  
-If no label is added the pull request will be added to the section ``Other Changes`` at the bottom of the release notes.
+If no label is added the pull request will be added to the section ``Other Changes`` at the bottom of the release notes. 
 
 The following labels cause the pull request to be ignored in the release notes:
 - ``wontfix``
