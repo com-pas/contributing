@@ -12,6 +12,7 @@ Use your best judgment, and feel free to propose changes to this document in a p
 [License and Developer Certificate of Origin](#license-and-developer-certificate-of-origin)
 
 [How Can I Contribute?](#how-can-i-contribute)
+* [Community refinements](#community-refinements)
 * [Reporting Bugs and Suggesting Enhancements](#reporting-bugs-and-suggesting-enhancements)
 * [Contributing Code](#contributing-code)
 * [Tools to contribute](#tools-to-contribute)
@@ -57,6 +58,18 @@ $ git commit -s -m 'This is my commit message'
 Note that checks will be performed during the integration in order to require that commits in a Pull Request contain valid ``Signed-off-by`` lines.
 
 ## How Can I Contribute?
+
+## Community refinements
+
+Every monday there is a CoMPAS Community Refinement at 10AM CET. The event is available at the CoMPAS mailing list [calendar](https://lists.lfenergy.org/g/CoMPAS/calendar) and can be subscribed to.
+
+### Prepared topics
+
+Every friday before the refinement meeting on Monday, all topics are published on the #compas channel on our [LFEnergy Slack](https://lfenergy.slack.com/).
+
+### Add your own topics
+
+Everybody can suggest topics for the refinement. To do this, join the [LFEnergy Slack](https://lfenergy.slack.com/) if not already, and put your topics in the #compas channel. You can just do this by writing a message like "I want to add something to the refinement this monday, namely..." or add a comment to the already prepared topics if available (see [Prepared topics](#prepared-topics)).
 
 ### Reporting Bugs and Suggesting Enhancements
 
