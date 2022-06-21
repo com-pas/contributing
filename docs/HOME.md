@@ -60,7 +60,7 @@ Note that checks will be performed during the integration in order to require th
 
 ### Reporting Bugs and Suggesting Enhancements
 
-Bugs and enhancement suggestions are tracked as [GitHub issues](https://guides.github.com/features/issues/). Create an issue in the repository where it belongs (an issue about the CIM to IEC 61850 mapping belongs in the [CIM Mapping repository](https://github.com/com-pas/compas-cim-mapping) for example) and provide the following information by filling in [the template](../.github/ISSUE_TEMPLATE.md). If your request is a feature, you only need to fill in the `When requesting a feature` section. If it's a bug, fill in the `When reporting a bug` section.
+Bugs and enhancement suggestions are tracked as [GitHub issues](https://guides.github.com/features/issues/). Create an issue in the repository where it belongs (an issue about the CIM to IEC 61850 mapping belongs in the [CIM Mapping repository](https://github.com/com-pas/compas-cim-mapping) for example) and provide the following information by filling in the template, which is either an issue or a bug.
 
 When an issue is created, it is automatically being added to the `To do` column of the specific repository. This means it's added, but not yet refined. Every monday at 10AM CET, there is a Community Refinement (see our mailing list [calendar](https://lists.lfenergy.org/g/CoMPAS/calendar), everybody can join) where issues are being discussed that are not refined yet. Your issue is one of them.
 Once it's accepted and refined, it goes to the `Ready for development` column and it's ready to be implemented/fixed.
