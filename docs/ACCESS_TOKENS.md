@@ -14,7 +14,7 @@ Below tokens are al registered under the CoMPAS Organisation as Action Secret.
 | DOCKER_HUB_USERNAME      | LF Energy User  | -           |
 | DOCKER_HUB_TOKEN         | LF Energy User  | -           |
 | ORG_GITHUB_ACTION_SECRET | Dennis Labordus | 31/12/2022  |
-| SONAR_TOKEN              | CoMPAS General  | -           |
+| SONAR_TOKEN              | Dennis Labordus | -           |
 
 Below tokens are al registered under the CoMPAS Organisation as Dependabot Secret.
 
