@@ -16,7 +16,7 @@ We are using GitHub for hosting our Git repositories. GitHub is being used for c
 Requests to review / merge each other's code.
 
 ### LFX Security Tool
-For checking potential security issues, we use the [LFX Security Tool](https://security.lfx.linuxfoundation.org/#/e8b6fdf9-2686-44c5-bbaa-6965d04ad3e1/licenses). 
+For checking potential security issues, we use the [LFX Security Tool](https://security.lfx.linuxfoundation.org/#/a092M00001IkJTLQA3/overview). 
 The LFX Security Tool scans selected repositories for potential security issues in dependencies. 
 It also scans every license that is being used within a repository and checks if they are compatible within open source projects.
 
