@@ -15,6 +15,14 @@ What's GitHub? It's where you're looking right now! (Joking!).
 We are using GitHub for hosting our Git repositories. GitHub is being used for creating issues and creating Pull 
 Requests to review / merge each other's code.
 
+#### GitHub User Settings
+We noticed that there are sometimes problems with the DCO Check. This can be caused by an email setting of the user. 
+It's about keeping the email address private. 
+
+Go to Settings of your account and select the option `Emails`. Here you will find the setting `Keep my email addresses 
+private`. Uncheck this setting. When checked there are cases that the DCO Check will fail, because the `github.com` 
+email address is used in the Web interface. When failing it will cause a lot of work to fix it.
+
 ### LFX Security Tool
 For checking potential security issues, we use the [LFX Security Tool](https://security.lfx.linuxfoundation.org/#/a092M00001IkJTLQA3/overview). 
 The LFX Security Tool scans selected repositories for potential security issues in dependencies. 
