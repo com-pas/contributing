@@ -14,7 +14,7 @@ Below tokens are al registered under the CoMPAS Organisation as Action Secret.
 | DOCKER_HUB_USERNAME      | LF Energy User  | -           |
 | DOCKER_HUB_TOKEN         | LF Energy User  | -           |
 | ORG_GITHUB_ACTION_SECRET | Pascal Wilbrink | 30/06/2023  |
-| SONAR_TOKEN              | Dennis Labordus | -           |
+| SONAR_TOKEN              | Pascal Wilbrink | -           |
 
 Below tokens are al registered under the CoMPAS Organisation as Dependabot Secret.
 
@@ -22,6 +22,7 @@ Below tokens are al registered under the CoMPAS Organisation as Dependabot Secre
 |--------------------------|-----------------|-------------|
 | DB_GITHUB_PACKAGES       | Pascal Wilbrink | 30/06/2023  |
 | ORG_GITHUB_ACTION_SECRET | Pascal Wilbrink | 30/06/2023  |
+| SONAR_TOKEN              | Pascal Wilbrink | -           |
 
 Currently, there are no GIT Repository specific secrets registered. Some access tokens are limited to a list of GIT 
 Repositories allowed to use it.
