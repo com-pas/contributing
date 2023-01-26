@@ -52,7 +52,7 @@ CoMPAS TSC voting members are:
 - Aliou Diaité (https://github.com/AliouDIAITE)
 - Jean-François Legros (https://github.com/legrosjf)
 - Sander Jansen (https://github.com/Sander3003)
-- Rob Tjalma (https://github.com/Flurb)
+- Juan Muñoz (https://github.com/juancho0202)
 
 ### Voting
 
