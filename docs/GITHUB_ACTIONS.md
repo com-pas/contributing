@@ -197,11 +197,6 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_PASSWORD }}
-      - name: Extract tag name #(3)
-        id: extract_tagname
-        shell: bash
-        # Extra the tagname form the git reference, value of GITHUB_REF will be something like refs/tags/<tag_name>.
-        run: echo "##[set-output name=tagname;]$(echo ${GITHUB_REF##*/})"
       - name: Set up JDK 11
         uses: actions/setup-java@v2.3.0
         with:
@@ -210,21 +205,20 @@ jobs:
       - name: Create custom Maven Settings.xml
         uses: whelk-io/maven-settings-xml-action@v18
         with:
-          output_file: custom_maven_settings.xml #(4)
+          output_file: custom_maven_settings.xml #(3)
           servers: '[{ "id": "github-packages-compas", "username": "OWNER", "password": "${{ secrets.GITHUB_TOKEN }}" }]'
       - name: Set version with Maven
-        run: mvn -B versions:set -DprocessAllModules=true -DnewVersion=${{ steps.extract_tagname.outputs.tagname }}
-      - name: Deploy with Maven to GitHub Packages and Docker Hub #(5)
+        run: mvn -B versions:set -DprocessAllModules=true -DnewVersion=${{ github.ref_name }}
+      - name: Deploy with Maven to GitHub Packages and Docker Hub #(4)
         run: ./mvnw -B -s custom_maven_settings.xml -Prelease,native clean deploy
 ```
 
 A few points to remember:
 - (1): By default, the docker image is only deployed on release. This way we have a strict deployment flow, and versions always have the same content. For more information about types of releases, check the [GitHub Actions documentation](https://docs.github.com/en/actions/reference/events-that-trigger-workflows#release).
 - (2): Before deploying to Docker Hub, we need to login first. This can be done by executing a GitHub Action. In this example, `DOCKER_HUB_USERNAME` and `DOCKER_HUB_PASSWORD` are used, which are secrets stored at [CoMPAS organization](https://github.com/organizations/com-pas/settings/secrets/actions). For more information about the username and password, ask in the the [Slack channel](https://app.slack.com/client/TLU68MTML).
-- (3): Extract the tag name from Git and use that as version to be set with Maven (${{ steps.extract_tagname.outputs.tagname }}).
-- (4): Creates a custom `settings.xml` having the credentials for the GitHub Packages.
+- (3): Creates a custom `settings.xml` having the credentials for the GitHub Packages.
   For more information, check our [Contributing](https://github.com/com-pas/contributing/blob/master/CONTRIBUTING.md).
-- (5): Building and publishing the docker image is build tool / framework specific. By default, CoMPAS services are using Quarkus and Maven. Deploying to Docker Hub is quite easy using Quarkus and maven, it's just a matter of building in combination with setting some properties. In this example, we use the `quarkus-profile` parameter instead of including all the parameters. This way, we can define profile specific properties in our `application.properties` file (For more information about this, check our [Docker Hub Deployment page](./DEPLOYMENT.md)):
+- (4): Building and publishing the docker image is build tool / framework specific. By default, CoMPAS services are using Quarkus and Maven. Deploying to Docker Hub is quite easy using Quarkus and maven, it's just a matter of building in combination with setting some properties. In this example, we use the `quarkus-profile` parameter instead of including all the parameters. This way, we can define profile specific properties in our `application.properties` file (For more information about this, check our [Docker Hub Deployment page](./DEPLOYMENT.md)):
 
 ```ini
 %publishNativeImage.quarkus.native.container-build=true
