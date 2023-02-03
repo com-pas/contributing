@@ -88,7 +88,7 @@ Username should be your GitHub username, password can both be your own [encrypte
 or a [Personal Access Token](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token).
 
 ## IDEs
-If your IDE is supported by sonarlint (both IntelliJ IDEA and the Eclipse IDE are supported), it is recommended to install it. 
+If your IDE is supported by SonarLint (both IntelliJ IDEA and the Eclipse IDE are supported), it is recommended to install it. 
 It provides immediate feedback on most sonar issues. Running tests individually is often possible in IDEs without invoking maven. 
 Please consult the documentation of your IDE for setting up the project through maven integration.
 

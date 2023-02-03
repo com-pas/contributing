@@ -20,9 +20,9 @@ Use your best judgment, and feel free to propose changes to this document in a p
 * [Copyright Guidelines](#definition-of-done)
 * [How-to begin](#how-to-begin)
 * [Copyright and Licensing](#copyright-and-licensing)
-* [Github Project Boards](#github-project-boards)
+* [GitHub Project Boards](#github-project-boards)
 
-[Github Pages](#github-pages)
+[GitHub Pages](#github-pages)
 
 
 ## Code of Conduct
@@ -36,7 +36,7 @@ Technical Steering Committee [CoMPAS-tsc@lists.lfenergy.org](mailto:CoMPAS-tsc@l
 By contributing to the CoMPAS project, you accept and agree to the following terms and conditions for your present and future contributions submitted to CoMPAS.
 
 All contributions to this project are licensed under the license stipulated at the corresponding sub-repository. 
-Except where otherwise explicitely indicated, CoMPAS is an open source project licensed under the [Apache License, version 2.0](http://www.apache.org/licenses/LICENSE-2.0/).
+Except where otherwise explicitly indicated, CoMPAS is an open source project licensed under the [Apache License, version 2.0](http://www.apache.org/licenses/LICENSE-2.0/).
 
 The project requires the use of the [Developer Certificate of Origin (DCO)](https://developercertificate.org/). 
 The DCO is a legally binding statement asserting that you are you have the right to submit your contribution and to license it under the project's applicable license.
@@ -61,15 +61,15 @@ Note that checks will be performed during the integration in order to require th
 
 ## Community refinements
 
-Every monday there is a CoMPAS Community Refinement at 10AM CET. The event is available at the CoMPAS mailing list [calendar](https://lists.lfenergy.org/g/CoMPAS/calendar) and can be subscribed to.
+Every Monday there is a CoMPAS Community Refinement at 10AM CET. The event is available at the CoMPAS mailing list [calendar](https://lists.lfenergy.org/g/CoMPAS/calendar) and can be subscribed to.
 
 ### Prepared topics
 
-Every friday before the refinement meeting on Monday, all topics are published on the #compas channel on our [LFEnergy Slack](https://lfenergy.slack.com/).
+Every Friday before the refinement meeting on Monday, all topics are published on the #compas channel on our [LFEnergy Slack](https://lfenergy.slack.com/).
 
 ### Add your own topics
 
-Everybody can suggest topics for the refinement. To do this, join the [LFEnergy Slack](https://lfenergy.slack.com/) if not already, and put your topics in the #compas channel. You can just do this by writing a message like "I want to add something to the refinement this monday, namely..." or add a comment to the already prepared topics if available (see [Prepared topics](#prepared-topics)).
+Everybody can suggest topics for the refinement. To do this, join the [LFEnergy Slack](https://lfenergy.slack.com/) if not already, and put your topics in the #compas channel. You can just do this by writing a message like "I want to add something to the refinement this Monday, namely..." or add a comment to the already prepared topics if available (see [Prepared topics](#prepared-topics)).
 
 ### Reporting Bugs and Suggesting Enhancements
 
@@ -116,7 +116,7 @@ Continuous integration is set up to run on all branches automatically and will o
 
 Continuous integration is setup automatically on all contributions. However, it's faster to iterate locally to fix problems than waiting for the status checks to finish. 
 There are many tools that can be used to do the verifications that are enforced by all status checks. The most simple and universal tool is maven, but IDE integrations 
-can be used to get more immediate feedback. Most of the team uses IntelliJ IDEA, but others IDEs can be used, for exemple the Eclipse IDE.
+can be used to get more immediate feedback. Most of the team uses IntelliJ IDEA, but others IDEs can be used, for example the Eclipse IDE.
 
 ### Definition of Done
 
@@ -144,7 +144,7 @@ On the [developing](DEVELOPING.md) page information about tooling can be found.
 
 #### Open Community Calls
 
-It's good to know that every other monday, we are having a so called Open Community Call. Everyone participating in the CoMPAS project can join 
+It's good to know that every other Monday, we are having a so called Open Community Call. Everyone participating in the CoMPAS project can join 
 and talk about and ask question about the CoMPAS project.
 
 When the Open Community Calls are taking place, can be found at the [General CoMPAS mailing list calendar](https://lists.lfenergy.org/g/CoMPAS/calendar).
@@ -157,7 +157,7 @@ If you have something to add, please add it to the agenda and notify everyone on
 
 One of the first important things, is to meet the community. Feel free to introduce yourself by joining the channel 'compas' on [LF Energy Slack](https://slack.lfenergy.org/)!
 
-The Slack channel is the first communication platform within the CoMPAS project (besides email and the Github platform), so if you need help for example you can use Slack!
+The Slack channel is the first communication platform within the CoMPAS project (besides email and the GitHub platform), so if you need help for example you can use Slack!
 
 #### Documenting
 A good (open source) project requires documentation. We have two places for our documentation
@@ -170,33 +170,33 @@ about CoMPAS in general (like roadmap and the community call agendas).
 #### Architecture and technologies
 
 For all architecture and technology choices (for example frameworks, build tools, database choices, etcetera),
-please check the source code (duh!) and our [CoMPAS Architecture Github Pages](https://com-pas.github.io/compas-architecture/).
+please check the source code (duh!) and our [CoMPAS Architecture GitHub Pages](https://com-pas.github.io/compas-architecture/).
 
 ### Copyright and Licensing
 
 Copyright and license information is done on per-file basis. We use the specification of [REUSE](https://reuse.software/spec/)
-to ensure that copyright information of the project is clear and can be analuzed in an automated fashion.
+to ensure that copyright information of the project is clear and can be analyzed in an automated fashion.
 
-Every source code repository within CoMPAS has a Github Action for checking against the REUSE specification.
+Every source code repository within CoMPAS has a GitHub Action for checking against the REUSE specification.
 
 For more information, check the [Copyright Guidelines](STYLEGUIDE.md#copyright-guidelines) section.
 
-### Github Project Boards
+### GitHub Project Boards
 
 For managing the CoMPAS issues created in all the separate repositories, we use the [Projects Board](https://github.com/orgs/com-pas/projects) of Github.
 CoMPAS uses 2 different Project Boards: One for [Pull Requests](https://github.com/orgs/com-pas/projects/2) and one for the [Issues](https://github.com/orgs/com-pas/projects/1).
 
 When creating Pull Requests or Issues, it will automatically create issues or Pull Requests on the Project Boards.
-This is done by the Automate Projects Github Action (take a look at the [action from the Data Service](https://github.com/com-pas/compas-core/blob/master/.github/workflows/automate-projects.yml) for example).
-Changing the status of Issues / Pull Requests is also handled automatically by the Github Action.
+This is done by the Automate Projects GitHub Action (take a look at the [action from the Data Service](https://github.com/com-pas/compas-core/blob/master/.github/workflows/automate-projects.yml) for example).
+Changing the status of Issues / Pull Requests is also handled automatically by the GitHub Action.
 
 Issues and Pull Requests can be moved on both the Project Boards and on the boards of the specific repository itself. It synchronizes automatically.
 
-## Github Pages
+## GitHub Pages
 
-This site is provided as a [github pages site](https://com-pas.github.io/contributing/).
-The content is maintained and edited on [Github](https://github.com/com-pas/contributing) in the directory "docs".
-Contributors are only allowed to contribute by editing the content on Github and must do so by presenting their modifications as *pull-request* to the community.
+This site is provided as a [GitHub pages site](https://com-pas.github.io/contributing/).
+The content is maintained and edited on [GitHub](https://github.com/com-pas/contributing) in the directory "docs".
+Contributors are only allowed to contribute by editing the content on GitHub and must do so by presenting their modifications as *pull-request* to the community.
 The diagrams on this page are created using [DrawIO](https://github.com/jgraph/drawio-desktop/releases)
 and follow [Unified Modeling Language (UML)](https://www.omg.org/spec/UML/).
 The drawIO design file is available on this site: [/blob-files/CoMPAS.drawio](blob-files/CoMPAS.drawio).

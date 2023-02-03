@@ -1,8 +1,8 @@
-# Github Actions
-Every repository within the CoMPAS Github organization need a default set of Github Actions.
-[Github Actions](https://github.com/features/actions) are CI/CD steps within a Github Repository that you can configure. This way, you can ensure that certain steps (like building) are always triggered on for example a commit push.
+# GitHub Actions
+Every repository within the CoMPAS GitHub organization need a default set of GitHub Actions.
+[GitHub Actions](https://github.com/features/actions) are CI/CD steps within a GitHub Repository that you can configure. This way, you can ensure that certain steps (like building) are always triggered on for example a commit push.
 
-Within CoMPAS, we define the following 'must have' Github Actions:
+Within CoMPAS, we define the following 'must have' GitHub Actions:
   - [Building](#building)
   - [REUSE check](#reuse-check)
   - [SonarCloud](#sonarcloud)
@@ -10,7 +10,7 @@ Within CoMPAS, we define the following 'must have' Github Actions:
 
 More to follow.
 
-Github Actions are configured using YAML files. These files are stored in the `.github/workflows` directory of a specific repository.
+GitHub Actions are configured using YAML files. These files are stored in the `.github/workflows` directory of a specific repository.
 
 ## Maven settings.xml during GitHub Action for GitHub Packages
 During multiple GitHub Actions (like building and SonarCloud analysis), the custom `settings.xml` file is needed because it needs access to the GitHub Packages
@@ -65,7 +65,7 @@ jobs:
 
 A few points to remember:
 - (1): By default, all actions are triggered on a push action.
-- (2): This step creates a custom settings.xml for authenticating for Github Packages. For more information,
+- (2): This step creates a custom settings.xml for authenticating for GitHub Packages. For more information,
   check the [Contributing file](https://github.com/com-pas/contributing/blob/master/CONTRIBUTING.md).
 - (3): This is a default for building a Maven project. It may differ in some cases, please feel free to adjust it.
 
@@ -92,7 +92,7 @@ A few points to remember:
 This is the only thing that has to be done. After this, it will be checked on every push.
 
 ### REUSE badge
-For transparancy, CoMPAS repositories also include a REUSE badge in their README for fast checking the REUSE compliance.
+For transparency, CoMPAS repositories also include a REUSE badge in their README for fast checking the REUSE compliance.
 
 Two steps are needed to get a REUSE badge to work:
 
@@ -110,11 +110,11 @@ After doing all these steps, everything is set up for the REUSE check.
 ## SonarCloud
 For static code analysis, CoMPAS is using [SonarCloud](https://sonarcloud.io/). To configure this, there are several steps that needs to be done.
 
-1. Go to the [CoMPAS Github organization settings](https://github.com/organizations/com-pas/settings/profile), and click on "Installed Github Apps". SonarCloud is listed here already (because we are already using it). Click on the 'configure' button next to it.
+1. Go to the [CoMPAS GitHub organization settings](https://github.com/organizations/com-pas/settings/profile), and click on "Installed GitHub Apps". SonarCloud is listed here already (because we are already using it). Click on the 'configure' button next to it.
 2. In the "Repository access" section, select the repository you want to add. By default, not every repository is added as an extra check.
 3. Create a new project in [SonarCloud](https://sonarcloud.io/projects/create).
 4. Select the repository to be analyzed, click Set Up.
-5. Choose the Analysis Method "With Github Actions".
+5. Choose the Analysis Method "With GitHub Actions".
 6. It first tells you to create a SONAR_TOKEN secret in your repo. Go to your repository -> Settings - Secrets -> New repository secret -> Name: SONAR_TOKEN. Value: Copy the value from the SonarCloud website into here. Then save the secret
 7. Select Maven as the option that best describes our build and **remember the projectKey**. and create a `sonarcloud_analysis.yml` file in the `.github/workflows` directory containing the following source code running.
 
@@ -168,7 +168,7 @@ jobs:
 
 A few points to remember:
 - (1): By default, all actions are triggered on a push action.
-- (2): Creates a custom `settings.xml` having the credentials for the Github Packages.
+- (2): Creates a custom `settings.xml` having the credentials for the GitHub Packages.
   For more information, check our [Contributing](https://github.com/com-pas/contributing/blob/master/CONTRIBUTING.md).
 - (3): Replace the `<insert project key>` with the project key you copied.
 
@@ -219,10 +219,10 @@ jobs:
 ```
 
 A few points to remember:
-- (1): By default, the docker image is only deployed on release. This way we have a strict deployment flow, and versions always have the same content. For more information about types of releases, check the [Github Actions documentation](https://docs.github.com/en/actions/reference/events-that-trigger-workflows#release).
+- (1): By default, the docker image is only deployed on release. This way we have a strict deployment flow, and versions always have the same content. For more information about types of releases, check the [GitHub Actions documentation](https://docs.github.com/en/actions/reference/events-that-trigger-workflows#release).
 - (2): Before deploying to Docker Hub, we need to login first. This can be done by executing a GitHub Action. In this example, `DOCKER_HUB_USERNAME` and `DOCKER_HUB_PASSWORD` are used, which are secrets stored at [CoMPAS organization](https://github.com/organizations/com-pas/settings/secrets/actions). For more information about the username and password, ask in the the [Slack channel](https://app.slack.com/client/TLU68MTML).
 - (3): Extract the tag name from Git and use that as version to be set with Maven (${{ steps.extract_tagname.outputs.tagname }}).
-- (4): Creates a custom `settings.xml` having the credentials for the Github Packages.
+- (4): Creates a custom `settings.xml` having the credentials for the GitHub Packages.
   For more information, check our [Contributing](https://github.com/com-pas/contributing/blob/master/CONTRIBUTING.md).
 - (5): Building and publishing the docker image is build tool / framework specific. By default, CoMPAS services are using Quarkus and Maven. Deploying to Docker Hub is quite easy using Quarkus and maven, it's just a matter of building in combination with setting some properties. In this example, we use the `quarkus-profile` parameter instead of including all the parameters. This way, we can define profile specific properties in our `application.properties` file (For more information about this, check our [Docker Hub Deployment page](./DEPLOYMENT.md)):
 

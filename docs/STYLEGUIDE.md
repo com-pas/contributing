@@ -36,9 +36,9 @@ For more tips on using REUSE (for example with a small command line tool), check
 ## Java StyleGuide
 
 - The project uses modern java, feel free to use any new APIs provided by the current java version (currently java 11).
-- New API classes and methods should be documented with javadoc. Write higher level documentation for classes and lower level documentation for methods. For example, ...
+- New API classes and methods should be documented with Javadoc. Write higher level documentation for classes and lower level documentation for methods. For example, ...
 - User-facing configuration options and general design decisions should be documented (where?)
-- We use standard configurations of well known tools like checkstyle and sonarqube to enforce a coherent coding style, please consult those tools for justifications on these rules.
+- We use standard configurations of well known tools like checkstyle and SonarQube to enforce a coherent coding style, please consult those tools for justifications on these rules.
 
 As a simple yet instructive example, consider ...
 ```java
@@ -50,4 +50,4 @@ As a simple yet instructive example, consider ...
 ## Git Commit Messages
 
 As usual, please start the commit message with a short line describing the commit, then leave a blank line, then give more context and explanations.
-You can use GitHub's integrations, for exemple to link to existing issues. In general, pull requests with more than one commits will be squashed when merged in master.
+You can use GitHub's integrations, for example to link to existing issues. In general, pull requests with more than one commits will be squashed when merged in master.
