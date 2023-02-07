@@ -1,9 +1,17 @@
 # Monitoring
+## Table of contents
+* [Frontend monitoring](#introduction)
+  1. [Getting your APM Server URL](#1-getting-your-apm-server-url)
+  2. [Using the /public/init-js script](#2-using-the-publicinit-js-script)
+  3. [Cloning private git repo using Kubernetes initContainers and Kubernetes Secrets](#3-cloning-private-git-repo-using-kubernetes-initcontainers-and-kubernetes-secrets)
+  4. [Web server configuration (optional)](#4-web-server-configuration-optional)
+  5. [References](#5-references)
 
-## Frontend monitoring 
+
+## Frontend monitoring <a name="introduction"></a>
 This section suggests an approach for using Elastic's Real User Monitoring (RUM) in order to capture user interactions with our client-side application CoMPAS-OpenSCD. The following instructions assume you/your organization already count on a hosted Elasticsearch Service deployment or an Elastic Cloud organization account with Kibana as the frontend of your monitoring stack and a URL to access it. Also it is assumed that you deploy `compas-open-scd` by using Kubernetes (and [the compas-open-scd docker public docker image](https://hub.docker.com/r/lfenergy/compas-open-scd) or your own generated image). 
 
-### 1. Getting your serverUrl
+### 1. Getting your APM Server URL <a name="server-url"></a>
 Navigate to your Kibana URL and select the space that you would like to associate with your frontend app (default if you don't have several spaces in Kibana). Then open the drawer menu and navigate to `APM`:
 
 ![Navigation instructions to APM in Kibana](/docs/public/kibana-screenshot-1.png)
@@ -20,7 +28,7 @@ There are two suggested code blocks for setting up the RUM Agent, find in any of
 
 *Note: You have two options for getting your init script, you either install the `@elastic/apm-rum` dependency in your project or you set up the agent with `<script>` tags. In this document we will describe an approach for the latter.*
 
-### 2. Using the /public/init-js script
+### 2. Using the /public/init-js script <a name="init-js"></a>
 
 The __compas-open-scd__ project features a reference to an "empty" javascript resource at `index.html` (line:42)
 ```html
@@ -48,7 +56,7 @@ script.onload = function () {
 document.querySelector('head').appendChild(script);
 ```
 
-### 3. Cloning private git repo using Kubernetes initContainers and Kubernetes Secrets
+### 3. Cloning private git repo using Kubernetes initContainers and Kubernetes Secrets <a name="init-containers"></a>
 Start by generating a personal acccess token in Github and make sure you authorize your token to access your private repo (configure SSO if needed), your token must have checked the write:packages scope checkbox.
 
 Then you must create your Kubernetes Secret:
@@ -103,13 +111,13 @@ kubectl apply -f your-yaml-template.yaml
 
 Your pod should be up now with an initContainer that clones your private repo and copies the contents of `/path-to-init-js/` to compas-open-scd's `/app/public/init-js/`.
 
-### 4. Web server configuration
-// TODO: Asking Pascal to help me describe the problem with outgoing POST requests from Elastic RUM Agent in compas-open-scd and how to approach the solution for it. 
+### 4. Web server configuration (optional) <a name="web-server"></a>
+If you're using a web server like nginx or apache and the APM Server runs in an origin different than your server's origin, make sure to [configure CORS](https://www.elastic.co/guide/en/apm/agent/rum-js/master/configuring-cors.html) or setup a directive that allows for POST, OPTIONS http requests to your `serverUrl`.
 
-### 5. References
+### 5. References <a name="references"></a>
 
-[Full documentation about APM Real User Monitoring JavaScript Agent](https://www.elastic.co/guide/en/apm/agent/rum-js/5.x/intro.html)
+* [Full documentation about APM Real User Monitoring JavaScript Agent](https://www.elastic.co/guide/en/apm/agent/rum-js/5.x/intro.html)
 
-[Full APM Guide](https://www.elastic.co/guide/en/apm/guide/8.6/apm-quick-start.html)
+* [Full APM Guide](https://www.elastic.co/guide/en/apm/guide/8.6/apm-quick-start.html)
 
-[@stefvnf's medium blog post about cloning git repos using Kubernetes initContainers and Secrets](https://stefvnf.medium.com/cloning-git-repos-using-kubernetes-initcontainers-and-secrets-8609e3b2d238)
+* [@stefvnf's medium blog post about cloning git repos using Kubernetes initContainers and Secrets](https://stefvnf.medium.com/cloning-git-repos-using-kubernetes-initcontainers-and-secrets-8609e3b2d238)
