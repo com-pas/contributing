@@ -7,7 +7,7 @@ we know when they expire and if someone leaves the CoMPAS Organization which one
 
 ## Overview Access Tokens
 
-Below tokens are al registered under the CoMPAS Organisation as Action Secret.
+Below tokens are all registered under the CoMPAS Organisation as Action Secret.
 
 | Token Name               | Owner           | Expire Date |
 |--------------------------|-----------------|-------------|
@@ -16,7 +16,7 @@ Below tokens are al registered under the CoMPAS Organisation as Action Secret.
 | ORG_GITHUB_ACTION_SECRET | Pascal Wilbrink | 30/06/2023  |
 | SONAR_TOKEN              | Pascal Wilbrink | -           |
 
-Below tokens are al registered under the CoMPAS Organisation as Dependabot Secret.
+Below tokens are all registered under the CoMPAS Organisation as Dependabot Secret.
 
 | Token Name               | Owner           | Expire Date |
 |--------------------------|-----------------|-------------|

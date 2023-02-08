@@ -42,7 +42,7 @@ updates:
 ```
 
 - (1): This configures the GitHub Maven Repository that Dependabot can use to search for new versions of CoMPAS Dependencies.
-- (2): This will check if the newest versions of GitHub Actions are used. Default it will scan the directory ".githuib/workflows" 
+- (2): This will check if the newest versions of GitHub Actions are used. Default it will scan the directory ".github/workflows" 
        under the directory defined here (in this case "/").
 - (3): This will scan the Maven Plugins and Dependencies defined in the pom.xml files. The GitHub Maven Repository is also
        defined here.
@@ -76,7 +76,7 @@ pull request to merge it into the default branch.
 
 ## Adding Dependabot Secret DB_GITHUB_PACKAGES
 
-Tot access GitHub Packages a secret DB_GITHUB_PACKAGES needs to be created.
+To access GitHub Packages a secret DB_GITHUB_PACKAGES needs to be created.
 - First create a new personal access token from https://github.com/settings/tokens. Tokens can only be created as personal tokens.
   The token also must have the right "read:packages".
 - Next create a new organisation secret from https://github.com/organizations/com-pas/settings/secrets/dependabot with the value of

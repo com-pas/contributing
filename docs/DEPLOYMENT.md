@@ -2,7 +2,7 @@
 We deploy the (native) Docker image of all CoMPAS services to Docker Hub. This way, it can be pulled and deployed into environments of your choice (OpenShift for example).
 
 ## Quick Deployment instructions (under construction)
-The following instructions are terminal instructions for publishing a Quarkus docker image to Docker Hub. This should be done by a Github Action in the future.
+The following instructions are terminal instructions for publishing a Quarkus docker image to Docker Hub. This should be done by a GitHub Action in the future.
 
 ```
 docker login # Creating a Docker session
