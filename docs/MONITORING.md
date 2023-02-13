@@ -3,9 +3,7 @@
 * [Frontend monitoring](#introduction)
   1. [Getting your APM Server URL](#1-getting-your-apm-server-url)
   2. [Using the /public/init-js script](#2-using-the-publicinit-js-script)
-  3. [Cloning private git repo using Kubernetes initContainers and Kubernetes Secrets](#3-cloning-private-git-repo-using-kubernetes-initcontainers-and-kubernetes-secrets)
-  4. [Web server configuration (optional)](#4-web-server-configuration-optional)
-  5. [References](#5-references)
+  3. [References](#3-references)
 
 
 ## Frontend monitoring <a name="introduction"></a>
@@ -37,7 +35,7 @@ The __compas-open-scd__ project features a reference to an "empty" javascript re
 
 This init javascript file has the purpose to allow for dynamic configuration of each compas-open-scd deployment. 
 
-In a private repository create a copy of `init.js` (or edit if you already have your own copy of the file with custom init scripts) in a folder, let's call it `path-to-init-js` and add the following code:
+Make sure to include in your `init.js` file the following code:
 
 ```js
 const script = document.createElement('script');
@@ -56,65 +54,7 @@ script.onload = function () {
 document.querySelector('head').appendChild(script);
 ```
 
-### 3. Cloning private git repo using Kubernetes initContainers and Kubernetes Secrets <a name="init-containers"></a>
-Start by generating a personal acccess token in Github and make sure you authorize your token to access your private repo (configure SSO if needed), your token must have checked the write:packages scope checkbox.
-
-Then you must create your Kubernetes Secret:
-```sh
-kubectl create secret generic test-secret --from-literal=username='foo' --from-literal=password='ghp_12345yourgithubtoken'
-```
-
-Modify your YAML deployment template to include an initContainers section:
-```yaml
-  containers:
-    (...)
-    volumeMounts:
-      - mountPath: /app/public/init-js
-        name: "data-volume"
-        subPath: init-js
-  (...)
-  initContainers:
-    - name: "init-clone-repo"
-      image: alpine/git
-      imagePullPolicy: Always
-      args:
-        - clone
-        - --single-branch
-        - --branch
-        - --
-        - 'https://$(GIT_USERNAME):$(GIT_PASSWORD)@gitlab.company.com>/path/to/repo.git'
-        - '/path-to-init-js/'
-      env:
-        - name: GIT_USERNAME
-          valueFrom:
-            secretKeyRef:
-              key: username
-              name: test-secret
-        - name: GIT_PASSWORD
-          valueFrom:
-            secretKeyRef:
-              key: password
-              name: test-secret
-      volumeMounts:
-        - mountPath: /path-to-init-js
-          name: "data-volume"
-  volumes:
-    - name: "data-volume"
-      emptyDir: {}
-```
-
-Now apply changes to deployment with the new persistent volume init:
-
-```sh
-kubectl apply -f your-yaml-template.yaml
-```
-
-Your pod should be up now with an initContainer that clones your private repo and copies the contents of `/path-to-init-js/` to compas-open-scd's `/app/public/init-js/`.
-
-### 4. Web server configuration (optional) <a name="web-server"></a>
-If you're using a web server like nginx or apache and the APM Server runs in an origin different than your server's origin, make sure to [configure CORS](https://www.elastic.co/guide/en/apm/agent/rum-js/master/configuring-cors.html) or setup a directive that allows for POST, OPTIONS http requests to your `serverUrl`.
-
-### 5. References <a name="references"></a>
+### 3. References <a name="references"></a>
 
 * [Full documentation about APM Real User Monitoring JavaScript Agent](https://www.elastic.co/guide/en/apm/agent/rum-js/5.x/intro.html)
 
