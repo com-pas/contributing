@@ -12,15 +12,16 @@ This section suggests an approach for using Elastic's Real User Monitoring (RUM)
 ### 1. Getting your APM Server URL<a name="server-url"></a>
 Navigate to your Kibana URL and select the space that you would like to associate with your frontend app (default if you don't have several spaces in Kibana). Then open the drawer menu and navigate to `APM`:
 
-![Navigation instructions to APM in Kibana](/docs/public/kibana-screenshot-1.png)
+
+<img alt="Navigation instructions to APM in Kibana" src="{{ site.baseurl }}/public/kibana-screenshot-1.png"/>
 
 In the top right corner of this page click on `Add data`:
 
-![Navigation instructions to the Add data button in APM](/docs/public/kibana-screenshot-2.png)
+<img alt="Navigation instructions to the Add data button in APM" src="{{ site.baseurl }}/public/kibana-screenshot-2.png"/>
 
 Then scroll down to APM Agents and select `RUM (JS)`:
 
-![Navigation instructions to the RUM Agent](/docs/public/kibana-screenshot-3.png)
+<img alt="Navigation instructions to the RUM Agent" src="{{ site.baseurl }}/public/kibana-screenshot-3.png"/>
 
 There are two suggested code blocks for setting up the RUM Agent, find in any of them the `serverUrl` param and copy/paste it somewhere in your notes, we will use this URL later in a posterior step.
 
