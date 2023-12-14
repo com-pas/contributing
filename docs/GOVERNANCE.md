@@ -52,7 +52,7 @@ CoMPAS TSC voting members are:
 - Aliou Diaité (https://github.com/AliouDIAITE)
 - Jean-François Legros (https://github.com/legrosjf)
 - Sander Jansen (https://github.com/Sander3003)
-- Juan Muñoz (https://github.com/juancho0202)
+- Pascal Wilbrink (https://github.com/pascalwilbrink)
 
 ### Voting
 
