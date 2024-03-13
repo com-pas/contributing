@@ -35,15 +35,32 @@ For more tips on using REUSE (for example with a small command line tool), check
 
 ## Java StyleGuide
 
-- The project uses modern java, feel free to use any new APIs provided by the current java version (currently java 11).
+- The project uses modern java, feel free to use any new APIs provided by the current java version (currently java 17).
 - New API classes and methods should be documented with Javadoc. Write higher level documentation for classes and lower level documentation for methods. For example, ...
 - User-facing configuration options and general design decisions should be documented (where?)
-- We use standard configurations of well known tools like checkstyle and SonarQube to enforce a coherent coding style, please consult those tools for justifications on these rules.
+- We use standard configurations of well known tools like checkstyle and SonarQube to enforce a coherent coding style, please consult those tools for justifications on these rules. 
+    - ESlint is already in place for the front-end.
+    - Sonarcloud already checks the code style with best practices
+    - IntelliJ Default checkstyle is used for java (an example could be found in contribution project named .editorconfig)
 
 As a simple yet instructive example, consider ...
 ```java
 /**
- * Example?
+ * As checkstyle file content
+ * <?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE module PUBLIC "-//Puppy Crawl//DTD Check Configuration 1.3//EN" "http://www.puppycrawl.com/dtds/configuration_1_3.dtd">
+
+ <module name="Checker">
+ <module name="TreeWalker">
+ <module name="ConstantName"/>
+ </module>
+ </module>
+
+As in java code
+ 
+ private static final String voltageLevel //Not compliant
+ private static final String VOLTAGE_LEVEL //Compliant
+ 
  */
 ```
 
