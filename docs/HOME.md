@@ -61,11 +61,11 @@ Note that checks will be performed during the integration in order to require th
 
 ## Community refinements
 
-Every Monday there is a CoMPAS Community Refinement at 10AM CET. The event is available at the CoMPAS mailing list [calendar](https://lists.lfenergy.org/g/CoMPAS/calendar) and can be subscribed to.
+Online community refinement sessions can be scheduled ad-hoc e.g. via Slack. Feedback on stories/features can be put in the Github issue.
 
 ### Prepared topics
 
-Every Friday before the refinement meeting on Monday, all topics are published on the #compas channel on our [LFEnergy Slack](https://lfenergy.slack.com/).
+Topics to refine can be shared and published on the #compas channel on our [LFEnergy Slack](https://lfenergy.slack.com/). You can ask feedback upfront as well.
 
 ### Add your own topics
 
