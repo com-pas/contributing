@@ -2,10 +2,128 @@
 
 #### Table Of Contents
 
+* [CoMPAS components](#compas-components)
+* [Local development](#local-development)
 * [Tooling](#tooling)
 * [IDEs](#ides)
 * [GitHub Actions](#github-actions)
 * [Others](#others)
+
+## CoMPAS components
+
+CoMPAS is composed of multiple components, each designed to fulfill a specific role within the project. The following is an overview of these components, their description, and their associated repositories.
+
+- **CoMPAS Open SCD**  
+  *Description*: Provides a web-based tool for editing and validating Substation Configuration Description (SCD) files.  
+  *Technologies*: TypeScript, JavaScript  
+  *Repository*: [https://github.com/com-pas/compas-open-scd](https://github.com/com-pas/compas-open-scd)
+
+- **CoMPAS SCL Data Service**  
+  *Description*: Manages SCL data storage and retrieval.  
+  *Technologies*: Java, Quarkus, Maven, PostgreSQL  
+  *Repository*: [https://github.com/com-pas/compas-scl-data-service](https://github.com/com-pas/compas-scl-data-service)
+
+- **CoMPAS CIM Mapping**  
+  *Description*: Handles mapping between IEC CIM and IEC 61850.  
+  *Technologies*: Java, Quarkus, Maven  
+  *Repository*: [https://github.com/com-pas/compas-cim-mapping](https://github.com/com-pas/compas-cim-mapping)
+
+- **CoMPAS SCL Validator**  
+  *Description*: Validates SCL files to ensure compliance with standards.  
+  *Technologies*: Java, Quarkus, Maven  
+  *Repository*: [https://github.com/com-pas/compas-scl-validator](https://github.com/com-pas/compas-scl-validator)
+
+- **CoMPAS SCL Auto Alignment**  
+  *Description*: Automatically aligns SCL files without coordinates.  
+  *Technologies*: Java, Quarkus, Maven  
+  *Repository*: [https://github.com/com-pas/compas-scl-auto-alignment](https://github.com/com-pas/compas-scl-auto-alignment)
+
+- **CoMPAS Core**  
+  *Description*: Provides core utilities and shared functionality for other CoMPAS services.  
+  *Technologies*: Java, Quarkus, Maven  
+  *Repository*: [https://github.com/com-pas/compas-core](https://github.com/com-pas/compas-core)
+
+- **CoMPAS SCT**  
+  *Description*: A library for generating SCD files based on the IEC 61850 standard.  
+  *Technologies*: Java, Quarkus, Maven  
+  *Repository*: [https://github.com/com-pas/compas-sct](https://github.com/com-pas/compas-sct)
+
+- **CoMPAS SCL XSD**  
+  *Description*: Contains the official IEC 61850-6 SCL XSD schemas.  
+  *Technologies*: Java, Quarkus, Maven  
+  *Repository*: [https://github.com/com-pas/compas-scl-xsd](https://github.com/com-pas/compas-scl-xsd)
+
+- **CoMPAS Deployment**  
+  *Description*: Provides tools and configurations for deploying CoMPAS services.  
+  *Repository*: [https://github.com/com-pas/compas-deployment](https://github.com/com-pas/compas-deployment)
+
+- **CoMPAS Architecture**  
+  *Description*: Contains architectural documentation and diagrams for the CoMPAS project.  
+  *Repository*: [https://github.com/com-pas/compas-architecture](https://github.com/com-pas/compas-architecture)
+
+## Local development
+
+This section provides instructions for setting up a local development environment and running the CoMPAS stack or individual services.
+
+### Prerequisites
+
+Ensure the following tools are installed on your system:
+- [Docker](https://www.docker.com/)
+- [Docker Compose](https://docs.docker.com/compose/)
+
+### Running the CoMPAS stack locally
+
+To run the entire CoMPAS stack locally, you can use the [compas-deployment](https://github.com/com-pas/compas-deployment) repository, which provides a pre-configured `docker-compose-postgresql.yml` file. Follow these steps:
+
+1. Clone the `compas-deployment` repository:
+
+```bash
+git clone https://github.com/com-pas/compas-deployment.git
+cd compas-deployment
+```
+
+2. To build and start all services run:
+
+```bash
+docker-compose --env-file compas/.env -f compas/docker-compose-postgresql.yml up -d --build
+```
+
+3. Use the `./bin/docker-wait-on-containers.sh` script to wait for all containers to be fully initialised. Once all containers are ready, it will print a message indicating that no containers are in the health=starting state.
+
+```bash
+./bin/docker-wait-on-containers.sh
+```
+
+4. Once the stack is running, the application will be available at [http://localhost](http://localhost). You can log in using the credentials configured in the Keycloak demo setup. For more information on the Keycloak users that are created, refer to the [Keycloak Demo Configuration documentation](https://github.com/com-pas/compas-deployment/tree/main?tab=readme-ov-file#keycloak-demo-configuration). If you encounter any issues, refer to the [Known Issues section](https://github.com/com-pas/compas-deployment/tree/main?tab=readme-ov-file#known-issue-with-docker-compose) in the compas-deployment repository.
+
+5. To stop the stack, run:
+
+```bash
+# Stop all containers
+docker-compose -f compas/docker-compose-postgresql.yml down
+```
+or
+
+```bash
+# Stop all containers and remove the volumes.
+docker-compose -f compas/docker-compose-postgresql.yml down -v
+```
+
+### Running an individual service locally
+
+Each repository contains the relevant and most up-to-date information on setting up the development environment and running the service locally. Refer to the `DEVELOPMENT.md` file or equivalent documentation in the respective repository for detailed instructions.
+
+| Component                     | Development Guide                                                                                     |
+|-------------------------------|-------------------------------------------------------------------------------------------------------|
+| **CoMPAS Open SCD**           | [Development Guide](https://github.com/com-pas/compas-open-scd/blob/main/packages/compas-open-scd/DEVELOPMENT.md) |
+| **CoMPAS SCL Data Service**   | [Development Guide](https://github.com/com-pas/compas-scl-data-service/blob/main/doc/postgresql.md)      |
+| **CoMPAS CIM Mapping**        | [Development Guide](https://github.com/com-pas/compas-cim-mapping/blob/main/DEVELOPMENT.md)           |
+| **CoMPAS SCL Validator**      | [Development Guide](https://github.com/com-pas/compas-scl-validator/blob/main/DEVELOPMENT.md)         |
+| **CoMPAS SCL Auto Alignment** | [Development Guide](https://github.com/com-pas/compas-scl-auto-alignment/blob/main/DEVELOPMENT.md)    |
+| **CoMPAS Core**               | Not available                                                                                         |
+| **CoMPAS SCT**                | Not available                                                                                         |
+| **CoMPAS SCL XSD**             | Not available                                                                                        |
+| **CoMPAS Deployment**         | [Development Guide](https://github.com/com-pas/compas-deployment/blob/main/README.md)           |
 
 ## Tooling
 
@@ -86,6 +204,7 @@ Edit (or create if not already exists) the `~/.m2/settings.xml` file and add the
 Add this server section. The ID of the server must be the same as the ID found in the previous repository ID, it should map.
 Username should be your GitHub username, password can both be your own [encrypted password](https://maven.apache.org/guides/mini/guide-encryption.html)
 or a [Personal Access Token](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token).
+
 
 ## IDEs
 If your IDE is supported by SonarLint (both IntelliJ IDEA and the Eclipse IDE are supported), it is recommended to install it. 
