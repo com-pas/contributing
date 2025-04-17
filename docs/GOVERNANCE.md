@@ -46,13 +46,7 @@ project’s Technical Charter. The TSC is responsible for the technical directio
 
 ### Members
 
-CoMPAS TSC voting members are:
-- Patrick Montaner (https://github.com/PatrickMontaner)
-- Frédéric Fousseret (https://github.com/FredFousPro)
-- Aliou Diaité (https://github.com/AliouDIAITE)
-- Jean-François Legros (https://github.com/legrosjf)
-- Sander Jansen (https://github.com/Sander3003)
-- Pascal Wilbrink (https://github.com/pascalwilbrink)
+CoMPAS TSC voting members can be fond the LFX project center. https://projectadmin.lfx.linuxfoundation.org/ and look for the CoMPAS project
 
 ### Voting
 
