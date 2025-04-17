@@ -142,16 +142,9 @@ Before you start your coding journey within the CoMPAS project, there are some t
 Some things that will make your start a little easier!
 On the [developing](DEVELOPING.md) page information about tooling can be found.
 
-#### Open Community Calls
+#### Agenda
 
-It's good to know that every other Monday, we are having a so called Open Community Call. Everyone participating in the CoMPAS project can join 
-and talk about and ask question about the CoMPAS project.
-
-When the Open Community Calls are taking place, can be found at the [General CoMPAS mailing list calendar](https://lists.lfenergy.org/g/CoMPAS/calendar).
-
-The agendas can be found at the [LF Energy wiki](https://wiki.lfenergy.org/display/HOME/CoMPAS+Community+Calls).
-
-If you have something to add, please add it to the agenda and notify everyone on Slack!
+Meetings related to the CoMPAS project can be found here: [CoMPAS calender](https://zoom-lfx.platform.linuxfoundation.org/meetings/compas)
 
 #### Slack channel
 
