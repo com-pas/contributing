@@ -134,22 +134,17 @@ jobs:
         with:
           fetch-depth: 0
       - name: Set up JDK 1.11
-        uses: actions/setup-java@v2.3.0
+        uses: actions/setup-java@v3.9.0
         with:
           distribution: 'zulu'
           java-version: '11'
+          cache: 'maven'
       - name: Cache SonarCloud packages
         uses: actions/cache@v2.1.6
         with:
           path: ~/.sonar/cache
           key: ${{ runner.os }}-sonar
           restore-keys: ${{ runner.os }}-sonar
-      - name: Cache Maven packages
-        uses: actions/cache@v2.1.6
-        with:
-          path: ~/.m2
-          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
-          restore-keys: ${{ runner.os }}-m2
       - name: Create custom Maven Settings.xml #(2)
         uses: whelk-io/maven-settings-xml-action@v18
         with:
