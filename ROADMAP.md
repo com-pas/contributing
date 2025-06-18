@@ -1,4 +1,4 @@
 # Roadmap
 
-[Initial Roadmap slides from the LF Energy Design Team on "61850 model implementation and configuration"](/roadmap-docs/CoMPAS%20Initial%20Roadmap%20-%20final%20version.pptx)
+[The roadmap can be found on confluence.]([/roadmap-docs/CoMPAS%20Initial%20Roadmap%20-%20final%20version.pptx](https://lf-energy.atlassian.net/wiki/spaces/SHP/pages/32538737/CoMPAS+Roadmap))
 
