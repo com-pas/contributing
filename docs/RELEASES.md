@@ -1,5 +1,7 @@
 # Releasing software
 
+We aim to release about once a month, the releases are done per repository (if they have changes) as Docker images to DockerHub.
+
 ## Release Compas open scd
 
 In the compas-open-scd repository, update the version number in packages/compas-open-scd/package.json and make sure the submodule pointers are correct. Go to https://github.com/com-pas/compas-open-scd. Under releases click Draft a new release. In Choose a tag, create a new tag using the new version number. Click Generate release notes — review the notes and ensure they’re correct.
