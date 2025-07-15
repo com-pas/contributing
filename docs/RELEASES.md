@@ -4,7 +4,13 @@
 
 ### Backend services
 
-We are using [release please](https://github.com/googleapis/release-please) which automatically creates and updates a release PR. The PR contains an up to date changelog based on the conventional commit messsages and sets the new version number. To trigger a release the release please PR has to be merged, which triggers the release please workflow (currently the release please PR has to be merged twice, because it creates a snapshot version first). The workflow will build the Maven packages, upload them to GitHub packages and build the docker image and upload it to docker hub.
+We are using [release please](https://github.com/googleapis/release-please) which automatically creates and updates a release PR. The PR contains an up to date changelog based on the conventional commit messsages and sets the new version number. To trigger a release the release please PR has to be merged, which triggers the release please workflow (currently the release please PR has to be merged twice, because it creates a snapshot version first). The workflow will build the Maven packages, upload them to GitHub packages and build the Docker image and upload it to Docker hub.
+
+### Compas open scd
+
+In the compas-open-scd repository, update the version number in packages/compas-open-scd/package.json and make sure the submodule pointers are correct. Go to https://github.com/com-pas/compas-open-scd. Under releases click Draft a new release. In Choose a tag, create a new tag using the new version number. Click Generate release notes — review the notes and ensure they’re correct.
+
+Publishing the release will trigger a Github workflow and build the Docker image and upload it to Docker hub.
 
 ## Publish artifacts using Maven
 
