@@ -1,39 +1,16 @@
 # Releasing software
 
-## Create a release
+We aim to release about once a month, the releases are done per repository (if they have changes) as Docker images to DockerHub.
 
-To create a release of the software we are using the release functionality of GitHub. Under the tab ``code`` there is a section
-``Releases`` (Right side). When selected all current releases will be displayed, and a new release can be created (draft release).
-The standard branch to create a release from should be the ``main`` branch.
+## Release Compas open scd
 
-Enter the following values when creating a new release:
-- **Choose a tag**: Enter a new version using semantic versioning, for example ``0.1.4``. 
-  Also press ``Create new tag`` to create the new label.
-- **Target**: This should normally be ``main``.
-- **Release title**: Name of the release, use the following template ``Release <tag> of <project name>``, for instance 
-  ``Release 0.1.4 of SCL Auto Alignment Service``
-- **Describe the release**: These are the release notes, press the button ``Auto-generate release notes`` to generate these.
-  Check [Configure release notes generation](#configure-release-notes-generation) to configure how these are generated.
+In the compas-open-scd repository, update the version number in packages/compas-open-scd/package.json and make sure the submodule pointers are correct. Go to https://github.com/com-pas/compas-open-scd. Under releases click Draft a new release. In Choose a tag, create a new tag using the new version number. Click Generate release notes — review the notes and ensure they’re correct.
 
-Now press ``Publish release`` to create the release. For every repository that creates a software product (artifacts or docker images) 
-a GitHub Action (``release-project.yml``) is defined. This action runs when a release is created.
-```yaml
-on:
-  release:
-    types: [released]
-```
+Publishing the release will trigger a Github workflow and build the Docker image and upload it to Docker hub.
 
-Depending on the type of project different steps will be executed.
-Common steps are:
-- Checking out the source code,
-- Extracting the entered version from the Git Tag.
-- Set version using Maven
-- Setup Maven settings.xml file
+## Release backend service
 
-Depending on the type of project other steps will be executed. Some examples are:
-- Build and publish the software to GitHub Packages using Maven
-- Build and publish the docker image to DockerHub using Maven
-- Build and publish the docker image to DockerHub using NPM and Docker
+We are using [release please](https://github.com/googleapis/release-please) which automatically creates and updates a release PR. The PR contains an up to date changelog based on the conventional commit messsages and sets the new version number. To trigger a release the release please PR has to be merged, which triggers the release please workflow (currently the release please PR has to be merged twice, because it creates a snapshot version first). The workflow will build the Maven packages, upload them to GitHub packages and build the Docker image and upload it to Docker hub.
 
 ## Publish artifacts using Maven
 
@@ -53,7 +30,7 @@ Replace ``[repo-name]`` with the name of the repository from CoMPAS.
 
 ## Configure release notes generation
 
-During creating of a release we will use the GitHub feature to automatically generate the release notes using the pull requests.
+During creating of a release release please will automatically generate the release notes using commit messages.
 The way these release notes are created can be configured by adding/updating the file ``release.yml`` to the directory ``.github``.
 
 The content of the file ``release.yml`` is currently:
