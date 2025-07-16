@@ -11,18 +11,14 @@ Join the LF Energy Slack workspace to connect with the CoMPAS community:
 
 ### Github Issues
 
-For bug reports, feature requests or questions, please use GitHub Issues in the relevant repository:
+For bug reports, feature requests or questions, please use GitHub Issues in the relevant repository, for example:
 
 -   [CoMPAS Open SCD Issues](https://github.com/com-pas/compas-open-scd/issues)
 -   [CoMPAS SCL Data Service Issues](https://github.com/com-pas/compas-scl-data-service/issues)
 -   [CoMPAS CIM Mapping Issues](https://github.com/com-pas/compas-cim-mapping/issues)
--   [CoMPAS SCL Validator Issues](https://github.com/com-pas/compas-scl-validator/issues)
--   [CoMPAS SCL Auto Alignment Issues](https://github.com/com-pas/compas-scl-auto-alignment/issues)
 -   [CoMPAS Core Issues](https://github.com/com-pas/compas-core/issues)
--   [CoMPAS SCT Issues](https://github.com/com-pas/compas-sct/issues)
--   [CoMPAS SCL XSD Issues](https://github.com/com-pas/compas-scl-xsd/issues)
--   [CoMPAS Deployment Issues](https://github.com/com-pas/compas-deployment/issues)
--   [CoMPAS Architecture Issues](https://github.com/com-pas/compas-architecture/issues)
+
+_For a complete list of all CoMPAS repositories, visit the [CoMPAS GitHub organization](https://github.com/com-pas)._
 
 When creating an issue, please use the appropriate issue template (bug report, feature request, etc.) and provide all the requested information. This helps maintainers understand and address your issue more efficiently.
 
@@ -30,18 +26,14 @@ When creating an issue, please use the appropriate issue template (bug report, f
 
 If you discover a security vulnerability in any CoMPAS component, please report it (privately) through GitHub Security Advisories. Our contributors aim to respond within one week of your report with an acknowledgment and a preliminary plan for addressing the issue, including any necessary fixes and additional security tests.
 
-**Security Advisory Links per Repository:**
+**Security Advisory Links per Repository (examples):**
 
 -   [CoMPAS Open SCD Security Advisories](https://github.com/com-pas/compas-open-scd/security/advisories)
 -   [CoMPAS SCL Data Service Security Advisories](https://github.com/com-pas/compas-scl-data-service/security/advisories)
 -   [CoMPAS CIM Mapping Security Advisories](https://github.com/com-pas/compas-cim-mapping/security/advisories)
--   [CoMPAS SCL Validator Security Advisories](https://github.com/com-pas/compas-scl-validator/security/advisories)
--   [CoMPAS SCL Auto Alignment Security Advisories](https://github.com/com-pas/compas-scl-auto-alignment/security/advisories)
 -   [CoMPAS Core Security Advisories](https://github.com/com-pas/compas-core/security/advisories)
--   [CoMPAS SCT Security Advisories](https://github.com/com-pas/compas-sct/security/advisories)
--   [CoMPAS SCL XSD Security Advisories](https://github.com/com-pas/compas-scl-xsd/security/advisories)
--   [CoMPAS Deployment Security Advisories](https://github.com/com-pas/compas-deployment/security/advisories)
--   [CoMPAS Architecture Security Advisories](https://github.com/com-pas/compas-architecture/security/advisories)
+
+_For security advisories for all other CoMPAS repositories, navigate to the specific repository and access the Security tab._
 
 ### Useful Links
 
