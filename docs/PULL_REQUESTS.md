@@ -1,6 +1,6 @@
 # Pull requests
 
-To add code to the different repositories the code is build in a feature branch and merged back to the branch ``develop``
+To add code to the different repositories the code is build in a feature branch and merged back to the ``develop`` or `` main`` branch.
 using a pull request. No direct committing is allowed to the branches ``develop`` and ``main``.   
 When a release is created the branch ``develop`` is merged to the branch ``main`` using a pull request.  
 In some repositories the branch ``develop`` is skipped and not there. Feature branches are merged directly to the branch
@@ -28,3 +28,8 @@ The following labels cause the pull request to be ignored in the release notes:
 - ``invalid``
 
 **Remark**: The label ``tooling`` is not a standard label, so that may need to be created by the first developer using it.
+
+## Code review
+
+If you are a long time and trusted contributor, your can review your pull-requests with your collegues.
+Otherwise request the code owner of the repository to review your pull request. If you haven't heard back in 3 days, report your pull request in the [CoMPAS slack channel](https://lfenergy.slack.com/)
