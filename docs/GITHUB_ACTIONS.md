@@ -12,63 +12,6 @@ More to follow.
 
 GitHub Actions are configured using YAML files. These files are stored in the `.github/workflows` directory of a specific repository.
 
-## Maven settings.xml during GitHub Action for GitHub Packages
-During multiple GitHub Actions (like building and SonarCloud analysis), the custom `settings.xml` file is needed because it needs access to the GitHub Packages
-to download certain artifacts. We can do this by adding the following step **before** the GitHub Packages repository is needed.
-
-```yaml
-- name: Create custom Maven Settings.xml
-  uses: whelk-io/maven-settings-xml-action@v18
-  with:
-    output_file: custom_maven_settings.xml
-    servers: '[{ "id": "github-packages-compas", "username": "OWNER", "password": "${{ secrets.GITHUB_TOKEN }}" }]'
-```
-
-This basically creates a custom `settings.xml` at location `custom_maven_settings.xml`. This file can be passed to maven in the next step
-by using `mvn -s custom_maven_settings.xml` and perhaps some extra parameters you wish for.
-
-For the `servers` part, we again have the `github-packages-compas` ID that needs to be the same. We have an `OWNER` username (this is the default, because
-it needs to have a username) and a password which is the GITHUB_TOKEN that's always available.
-
-## Building
-All source code repositories need some kind of building step.
-By default, all source code repositories use Maven as the build tool.
-
-This building step is pretty easy to configure. Just create a `maven_build.yml` file in the `.github/workflows` directory containing the following source code:
-
-```yaml
-name: Maven Build
-
-on: push #(1)
-
-jobs:
-  build:
-    name: Build
-    runs-on: ubuntu-latest
-    timeout-minutes: 15
-
-    steps:
-      - uses: actions/checkout@v2
-      - name: Set up JDK 1.11
-        uses: actions/setup-java@v2.3.0
-        with:
-          distribution: 'zulu'
-          java-version: '11'
-      - name: Create custom Maven Settings.xml #(2)
-        uses: whelk-io/maven-settings-xml-action@v18
-        with:
-          output_file: custom_maven_settings.xml
-          servers: '[{ "id": "github-packages-compas", "username": "OWNER", "password": "${{ secrets.GITHUB_TOKEN }}" }]'
-      - name: Build with Maven
-        run: mvn -s custom_maven_settings.xml -B clean verify #(3)
-```
-
-A few points to remember:
-- (1): By default, all actions are triggered on a push action.
-- (2): This step creates a custom settings.xml for authenticating for GitHub Packages. For more information,
-  check the [Contributing file](https://github.com/com-pas/contributing/blob/master/CONTRIBUTING.md).
-- (3): This is a default for building a Maven project. It may differ in some cases, please feel free to adjust it.
-
 ## REUSE check
 For keeping our copyright and licensing information up to date and correct, we use [REUSE](https://reuse.software/) to check this. This is also configured for every separate repository in an easy manner: just create a `reuse.yml` file in the `.github/workflows` directory containing the following source code:
 
